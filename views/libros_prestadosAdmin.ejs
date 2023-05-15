@@ -1,0 +1,252 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/libros_no_disponibles.css" type="text/css"/>
+
+<!--Menú de opciones-->
+<div class="menu">
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Libros no disponibles</h1>
+</header>
+
+<br /><br />
+<center>
+  <div class="botones">
+        <button id="boton" onclick="btnConsulta()" type="button" class="btn btn-primary">Área de Consulta</button>
+        <button id="boton" onclick="btnGeneral()" type="button" class="btn btn-danger">Área General</button>
+        <button id="boton" onclick="btnInfantil()" type="button" class="btn btn-success">Área Infantil</button>
+  </div>
+</center>
+<script src="/static/js/botonesLibros.js"></script>
+<br />
+
+<div class="container">
+  <div id="consulta" style="display: none;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="6">
+            Libros en prestámo área consulta
+          </th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>V.</th>
+          <th>Recibió</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%
+        var i = 1;
+        consulta.forEach((consulta)=>{
+          if(i%2){
+        %>
+          <tr id="row1">
+            <td><%= i%></td>
+            <td><%= consulta.titulo%></td>
+            <td><%= consulta.autor%></td>
+            <td> V.<%= consulta.volumen%></td>
+            <td><%= consulta.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}else{%>
+          <tr id="row2">
+            <td><%= i%></td>
+            <td><%= consulta.titulo%></td>
+            <td><%= consulta.autor%></td>
+            <td> V.<%= consulta.volumen%></td>
+            <td><%= consulta.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}
+          i = i+1;
+        });
+        snDatos = i-1; 
+        if (snDatos == 0){%>
+          <tr id="row1">
+            <td colspan="6">
+              No hay libros prestados en esta categoría
+            </td>
+        <%}%>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="general" style="display: none;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="6">
+            Libros en prestámo área general
+          </th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>V.</th>
+          <th>Recibió</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%
+        var j = 1;
+        general.forEach((general)=>{
+          if(j%2){
+        %>
+          <tr id="row1">
+            <td><%= j%></td>
+            <td><%= general.titulo%></td>
+            <td><%= general.autor%></td>
+            <td> V.<%= general.volumen%></td>
+            <td><%= general.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}else{%>
+          <tr id="row2">
+            <td><%= j%></td>
+            <td><%= general.titulo%></td>
+            <td><%= general.autor%></td>
+            <td> V.<%= general.volumen%></td>
+            <td><%= general.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}
+          j = j+1;
+        });
+        snDatos = j-1; 
+        if (snDatos == 0){%>
+          <tr id="row1">
+            <td colspan="6">
+              No hay libros prestados en esta categoría
+            </td>
+        <%}%>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="infantil" style="display: none;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="6">
+            Libros en prestámo área infantil
+          </th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th>Titulo</th>
+          <th>Autor</th>
+          <th>V.</th>
+          <th>Recibió</th>
+          <th>Ver más</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%
+        var k = 1;
+        infantil.forEach((infantil)=>{
+          if(k%2){
+        %>
+          <tr id="row1">
+            <td><%= k%></td>
+            <td><%= infantil.titulo%></td>
+            <td><%= infantil.autor%></td>
+            <td> V.<%= infantil.volumen%></td>
+            <td><%= infantil.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}else{%>
+          <tr id="row2">
+            <td><%= k%></td>
+            <td><%= infantil.titulo%></td>
+            <td><%= infantil.autor%></td>
+            <td> V.<%= infantil.volumen%></td>
+            <td><%= infantil.correo%></td>
+            <td>
+              <a type="button" id="verMas" class="btn btn-primary" href="#">
+                Ver más
+              </a>
+            </td>
+          </tr>
+        <%}
+          k = k+1;
+        });
+        snDatos = k-1; 
+        if (snDatos == 0){%>
+          <tr id="row1">
+            <td colspan="6">
+              No hay libros prestados en esta categoría
+            </td>
+        <%}%>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+      </center>
+  </a>
+  <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/gmail.png">
+      </center>
+  </a>
+</div>
+</body>
+</html>

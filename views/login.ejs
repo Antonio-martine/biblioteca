@@ -1,0 +1,161 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/loginPerfil.css" type="text/css"/>
+
+<div class="row">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="btn-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" id="home" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Eventos">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Acerca-de">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Login">Ingresar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<br />
+
+<div>
+  <!--Subtitulo-->
+  <center>
+    <div class="subtitulo"> 
+      <span class="h1text">
+        Selecciona tu perfil
+      </span>
+    </div>
+  </center>
+  <br />
+  
+<!--Botones-->
+</div>
+<div class="botones">
+  <button id="boton" onclick="btnAdmin()" type="button" class="btn btn-danger">Administrativos 👨‍💼</button>
+  <button id="boton" onclick="btnUser()" type="button" class="btn btn-primary">Usuarios 🧑‍💻</button>
+  <button id="boton" onclick="btnServicio()" type="button" class="btn btn-success">Servicio Social 👨‍🏫</button>
+</div>
+<script src="/static/js/botonesLogin.js"></script>
+<br />
+
+<center>
+  <!--Administrador Formulario-->
+  <div class="card" id="administrador" style="display: none;">
+    <div class="card-header">
+      <h3>Bienvenido Administrador</h3>
+      <img src="/static/img/icons/admin.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/admin/login" method="post">
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="correo" class="form-control">
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control mb-3" id="id_password2">
+        <div class="btn-password">
+          <button type="button" id="togglePassword2">Mostrar contraseña</button>
+        </div>
+        <script src="/static/js/mostrarPassword2.js"></script>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+  </div>
+
+<!--Usuario Formulario-->
+  <div class="card" id="usuario" style="display: none;">
+    <div class="card-header">
+      <h3>Bienvenido Usuario</h3>
+      <img src="/static/img/icons/user.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/login" method="post">
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="correo" class="form-control">
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control mb-3" id="id_password">
+        <div class="btn-password">
+          <button type="button" id="togglePassword">Mostrar contraseña</button>
+        </div>
+        <script src="/static/js/mostrarPassword.js"></script>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="mb-3" type="submit">Ingresar</button>
+      <a type="button" id="nuevo" href="/NuevoUsuario">No tengo cuenta</a>
+    </div>
+  </form>
+  </div>
+
+  <!--Servicio Social Formulario-->
+  <div class="card" id="servicio" style="display: none;">
+    <div class="card-header">
+      <h3>Bienvenido Estudiante</h3>
+      <img src="/static/img/navbar/estudiante.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/servicio/loginServicio" method="post">
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="correo" class="form-control">
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control mb-3" id="id_password3">
+        <div class="btn-password">
+          <button type="button" id="togglePassword3">Mostrar contraseña</button>
+        </div>
+        <script src="/static/js/mostrarPassword3.js"></script>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="mb-3" type="submit">Ingresar</button>
+      <a type="button" id="nuevo" href="/NuevoUsuario">No tengo cuenta</a>
+    </div>
+  </form>
+  </div>
+</center>
+<br /><br />
+
+<div class="footer">
+  <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+      </center>
+  </a>
+  <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/gmail.png">
+      </center>
+  </a>
+</div>
+</body>
+</html>

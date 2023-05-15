@@ -1,0 +1,28 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/404Error.css" type="text/css"/>
+<br />
+
+<div class="container">
+    <div class="row">
+        <div id="imagen">
+            <img src="/static/img/navbar/nuevoLibro.png" >
+            <br />
+            <h2>No hay registros en esta categoría</h2>
+            <%if(usuario[0].tipo == 'admin'){%>
+                <p id="mensaje">Lo sentimos, no encontramos algún libro en esta categoría, registra uno ó verifica la conexión de tu internet.</p>
+                <br />    
+                <a href="/admin/LibrosAdmin/<%= usuario[0].identificador%>" type="button" class="button"><p>Regresar</p></a>
+            <%}else if(usuario[0].tipo == 'usuario'){%>
+                <p id="mensaje">Lo sentimos, no encontramos algún libro en esta categoría, pide información a un administrador sobre tu busqueda ó verifica la conexión de tu internet.</p>
+                <br />    
+                <a href="/libros/<%= usuario[0].identificador%>" type="button" class="button"><p>Regresar</p></a>
+            <%}
+            else if(usuario[0].tipo == 'servicioSocial'){%>
+            <p id="mensaje">Lo sentimos, no encontramos algún libro en esta categoría, pide información a un administrador sobre tu busqueda ó verifica la conexión de tu internet.</p>
+            <br />    
+            <a href="/servicio/libros/<%= usuario[0].identificador%>" type="button" class="button"><p>Regresar</p></a>
+            <%}%>
+        </div>
+    </div>
+</div>
+<br />

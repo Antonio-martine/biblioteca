@@ -1,0 +1,263 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/tablaLibros.css" type="text/css"/>
+
+<!--Código-->
+<%
+  var ordenInicio;
+  if(general[0].orden >= 0 && general[0].orden < 100 ){
+    ordenInicio = 0;
+  }
+  else if(general[0].orden >= 100 && general[0].orden < 200 ){
+    ordenInicio = 100;
+  }
+  else if(general[0].orden >= 200 && general[0].orden < 300 ){
+    ordenInicio = 200;
+  }
+  else if(general[0].orden >= 300 && general[0].orden < 400 ){
+    ordenInicio = 300;
+  }
+  else if(general[0].orden >= 400 && general[0].orden < 500 ){
+    ordenInicio = 400;
+  }
+  else if(general[0].orden >= 500 && general[0].orden < 600 ){
+    ordenInicio = 500;
+  }
+  else if(general[0].orden >= 600 && general[0].orden < 700 ){
+    ordenInicio = 600;
+  }
+  else if(general[0].orden >= 700 && general[0].orden < 800 ){
+    ordenInicio = 700;
+  }
+  else if(general[0].orden >= 800 && general[0].orden < 900 ){
+    ordenInicio = 800;
+  }
+  else if(general[0].orden >= 900 && general[0].orden < 1000 ){
+    ordenInicio = 900;
+  }
+
+%>
+
+
+<!--Menú de opciones-->
+<div class="menu">
+  <%if(usuario[0].tipo == 'usuario'){%>
+      <a type="button" href="/libros/<%= usuario[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+        </center>
+      </a>
+      <a type="button" href="/HomeUsuario/<%= usuario[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+        <br />
+        Home
+      </center>
+      </a>
+  <%}
+  else if(usuario[0].tipo == 'servicioSocial'){%>
+      <a type="button" href="/servicio/libros/<%= usuario[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+        </center>
+      </a>
+      <a type="button" href="/servicio/homeServicio/<%= usuario[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+        <br />
+        Home
+      </center>
+      </a>
+    <%}%>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Tabla de libros disponibles</h1>
+</header>
+<br />
+
+<center>
+<div class="botones">
+  <button id="boton" onclick="btnTitulo()" type="button" class="btn btn-danger">Buscar titulo</button>
+  <button id="boton" onclick="btnAutor()" type="button" class="btn btn-danger">Buscar autor</button>
+  <button id="boton" onclick="btnEditorial()" type="button" class="btn btn-danger">Buscar editorial</button>
+</div>
+</center>
+<script src="/static/js/botonesBusqueda.js"></script>
+
+<div class="container">
+  <div class="row">
+    <center>
+      <!--Buscar Titulo-->
+      <%if(usuario[0].tipo == 'usuario'){%>
+      <div class="card" id="titulo" style="display: none;">
+        <div class="card-header">
+          <p>Busqueda por titulo:</p>
+        </div>
+        <div class="card-body">
+          <form action="/BuscarTitulo/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+            <input type="text" name="titulo" class="form-control"/>
+            <button type="submit" class="btn btn-danger">Buscar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Buscar Autor-->
+      <div class="card" id="autor" style="display: none;">
+        <div class="card-header">
+          <p>Busqueda por autor:</p>
+        </div>
+        <div class="card-body">
+          <form action="/BuscarAutor/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+            <input type="text" name="autor" class="form-control"/>
+            <button type="submit" class="btn btn-danger">Buscar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Buscar Editorial-->
+      <div class="card" id="editorial" style="display: none;">
+        <div class="card-header">
+          <p>Busqueda por editorial:</p>
+        </div>
+        <div class="card-body">
+          <form action="/BuscarEditorial/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+            <input type="text" name="editorial" class="form-control"/>
+            <button type="submit" class="btn btn-danger">Buscar</button>
+          </form>
+        </div>
+      </div>
+      <%}
+      else if(usuario[0].tipo == 'servicioSocial'){%>
+        <div class="card" id="titulo" style="display: none;">
+          <div class="card-header">
+            <p>Busqueda por titulo:</p>
+          </div>
+          <div class="card-body">
+            <form action="/servicio/BuscarTitulo/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+              <input type="text" name="titulo" class="form-control"/>
+              <button type="submit" class="btn btn-danger">Buscar</button>
+            </form>
+          </div>
+        </div>
+  
+        <!--Buscar Autor-->
+        <div class="card" id="autor" style="display: none;">
+          <div class="card-header">
+            <p>Busqueda por autor:</p>
+          </div>
+          <div class="card-body">
+            <form action="/servicio/BuscarAutor/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+              <input type="text" name="autor" class="form-control"/>
+              <button type="submit" class="btn btn-danger">Buscar</button>
+            </form>
+          </div>
+        </div>
+  
+        <!--Buscar Editorial-->
+        <div class="card" id="editorial" style="display: none;">
+          <div class="card-header">
+            <p>Busqueda por editorial:</p>
+          </div>
+          <div class="card-body">
+            <form action="/servicio/BuscarEditorial/general/<%= usuario[0].identificador%>/<%= ordenInicio%>" method="post">
+              <input type="text" name="editorial" class="form-control"/>
+              <button type="submit" class="btn btn-danger">Buscar</button>
+            </form>
+          </div>
+        </div>
+        <%}%>
+    </center>
+
+    <table class="table">
+      <thead>
+          <tr>
+            <th colspan="7">General</th>
+          </tr>
+          <tr>
+              <th>id</th>
+              <th>#</th>
+              <th>Titulo</th>
+              <th>Autor</th>
+              <th>Editorial</th>
+              <th>Volumen</th>
+              <th>Ver más</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% 
+          var i=1;
+            general.forEach((general)=>{
+              if(i%2){
+                %>
+                <tr id="row1">
+                  <td><b><%= i %></b></td>
+                  <td><%= general.orden %></td>
+                  <td><%= general.titulo%></td>
+                  <td><%= general.autor%></td>
+                  <td><%= general.editorial%></td>
+                  <td>V.<%= general.volumen%></td>  
+                  <td>
+                    <a type="button" id="verMas" class="btn btn-primary" href="/informacionLibro/<%= general.id%>/<%= general.categoria%>/<%= usuario[0].identificador%>">
+                      <p>Ver más</p>
+                    </a>
+                  </tr>
+                  <%
+                }else{%>
+                  <tr id="row2">
+                    <td><b><%= i %></b></td>
+                    <td><%= general.orden %></td>
+                    <td><%= general.titulo%></td>
+                    <td><%= general.autor%></td>
+                    <td><%= general.editorial%></td>
+                    <td>V.<%= general.volumen%></td>  
+                    <td>
+                      <a type="button" id="verMas" class="btn btn-primary" href="/informacionLibro/<%= general.id%>/<%= general.categoria%>/<%= usuario[0].identificador%>">
+                        <p>Ver más</p>
+                      </a>
+                    </tr>
+                    <%
+                }
+            i=i+1;
+           });
+          %>
+      </tbody>
+  </table>
+  </div>
+</div>
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>

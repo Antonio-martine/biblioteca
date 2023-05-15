@@ -1,0 +1,94 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/login.css" type="text/css"/>
+<br />
+
+<!--Menú de opciones-->
+<div class="menu">
+  <a type="button" href="/admin/tablaServicio/<%= administrador[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+      <br />
+      Regresar
+    </center>
+  </a>
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<center>
+  <div class="card">
+    <div class="card-header">
+      <h3>Registra tu estudiante</h3>
+      <img src="/static/img/navbar/estudiante.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/admin/registrarServicio" method="post">
+        <div>
+            <input type="hidden" name="estado" class="form-control" value="true">
+            <input type="hidden" name="tipo" class="form-control" value="servicioSocial">
+            <input type="hidden" name="idAdmin" class="form-control" value="<%= administrador[0].identificador%>">
+        </div>
+        <div>
+          <label>Foto de perfil:</label>
+          <input type="file" name="perfil" class="form-control">
+        </div>
+        <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control">
+      </div>
+      <div>
+        <label>Apellido:</label>
+        <input type="text" name="apellido" class="form-control">
+      </div>
+      <div>
+        <label>Escuela:</label>
+        <input type="text" name="escuela" class="form-control">
+      </div>
+      <div>
+        <label>Fecha de Inicio:</label>
+        <input type="date" name="fechaInicio" class="form-control">
+      </div>
+      <div>
+        <label>Fecha de Termino:</label>
+        <input type="date" name="fechaTermino" class="form-control">
+      </div>
+      <div>
+        <label>Horas a trabajar:</label>
+        <input type="number" name="totalHoras" class="form-control">
+      </div>
+      <div>
+      <label>Correo:</label>
+        <input type="email" name="correo" class="form-control">
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control" id="id_password">
+        <br />
+        <div class="btn-password">
+          <button type="button" id="togglePassword">Mostrar contraseña</button>
+        </div>
+        <script src="/static/js/mostrarPassword.js"></script>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+  </div>
+</center>
+<br /><br />
+
+
+<%- include('templates/pie')%>

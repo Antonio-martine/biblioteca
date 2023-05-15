@@ -1,0 +1,93 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/loginPerfil.css" type="text/css"/>
+
+<div class="row">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="btn-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" id="home" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Eventos">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Acerca-de">Acerca de</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Login">Ingresar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<br />
+<center>
+  <div class="card">
+    <div class="card-header">
+      <h3>¡Registrate Aquí!</h3>
+      <img src="/static/img/icons/nuevoUsuario1.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/NuevoUsuario" method="post">
+        <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control" required>
+      </div>
+      <div>
+        <label>Apellido:</label>
+        <input type="text" name="apellido" class="form-control" required>
+      </div>
+      <div>
+      <div>
+      <label>Correo:</label>
+        <input type="email" name="correo" class="form-control" required>
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control" id="id_password" required>
+        <br />
+        <div class="btn-password">
+          <button type="button" id="togglePassword">Mostrar contraseña</button>
+        </div>
+      </div>
+      <script src="/static/js/mostrarPassword.js"></script>
+    </div>
+    <div class="card-footer">
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+  </div>
+</center>
+<br /><br />
+
+<div class="footer">
+  <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+      </center>
+  </a>
+  <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+      </center>
+  </a>
+  <a type="button" href="">
+      <center>
+          <img id="imgFooter" src="/static/img/icons/gmail.png">
+      </center>
+  </a>
+</div>
+</body>
+</html>

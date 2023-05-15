@@ -1,0 +1,96 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/login.css" type="text/css"/>
+<br />
+
+<!--Menú de opciones-->
+<div class="menu">
+  <%if(servicio[0].estado == true){%>
+  <a type="button" href="/admin/alumno/<%= administrador[0].identificador%>/<%= servicio[0].correo%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+      <br />
+      Regresar
+    </center>
+  </a>
+  <%
+}
+else{
+  %>
+  <a type="button" href="/admin/alumnoConcluido/<%= administrador[0].identificador%>/<%= servicio[0].correo%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+    <br />
+    Regresar
+  </center>
+</a>
+<%
+}
+%>
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<center>
+  <div class="card">
+    <div class="card-header">
+      <h3>Actualiza tu estudiante</h3>
+      <img src="/static/img/navbar/estudiante.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/admin/ModificarAlumno/<%= administrador[0].identificador%>/<%= servicio[0].id%>" method="post">
+        <div>
+            <input type="hidden" name="estado" class="form-control" value="true">
+            <input type="hidden" name="tipo" class="form-control" value="servicioSocial">
+            <input type="hidden" name="idAdmin" class="form-control" value="<%= administrador[0].id%>">
+        </div>
+        <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control" value="<%= servicio[0].nombre%>">
+      </div>
+      <div>
+        <label>Apellido:</label>
+        <input type="text" name="apellido" class="form-control" value="<%= servicio[0].apellido%>">
+      </div>
+      <div>
+        <label>Escuela:</label>
+        <input type="text" name="escuela" class="form-control" value="<%= servicio[0].escuela%>">
+      </div>
+      <div>
+        <label>Fecha de Inicio:</label>
+        <input type="datetime" name="fechaInicio" class="form-control" value="<%= servicio[0].fechaInicio%>">
+      </div>
+      <div>
+        <label>Fecha de Termino:</label>
+        <input type="datetime" name="fechaTermino" class="form-control" value="<%= servicio[0].fechaTermino%>">
+      </div>
+      <div>
+        <label>Horas a trabajar:</label>
+        <input type="number" name="totalHoras" class="form-control" value="<%= servicio[0].totalHoras%>">
+      </div>
+      <div>
+        <label>Correo:</label>
+        <input type="email" name="correo" class="form-control" value="<%= servicio[0].correo%>">
+      </div>
+    </div>
+    <div class="card-footer">
+        <button type="submit">Modificar</button>
+      </form>
+    </div>
+  </div>
+</center>
+<br /><br />
+
+
+<%- include('templates/pie')%>

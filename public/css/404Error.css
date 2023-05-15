@@ -1,0 +1,163 @@
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/**Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Principal*/
+body{
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Imagen*/
+#imagen{
+    text-align: center;
+}
+
+/*Texto*/
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #005796;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/*Boton*/
+a{
+    background-color: #005796;
+    text-decoration: none;
+}
+a p{
+    
+    color: white;
+}
+
+a :hover{
+    background-color: #ffbc08;
+    color: black;
+}
+
+
+/*Resolución 320px*/
+@media screen and (min-width:320px) {
+    /*Imagen*/
+    img{
+        width: 215px;
+        height: 215px;
+        margin-bottom: 5%;
+    }
+
+    /*Texto*/
+    h2{
+        font-size: 18px;
+    }
+    p{
+        font-size: 14px;
+    }
+    
+    /*Boton*/
+    a{
+        width: 100px;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    a :hover{
+        width: 100px;
+        height: 35px;
+        background-color: #ffbc08;
+        color: black;
+        border: none;
+        border-radius: 10px;
+    }
+    a p{
+        padding-top: 7%;
+    }
+}
+
+/*Resolución 520px*/
+@media screen and (min-width:520px) {
+    /*Imagen*/
+    img{
+        width: 315px;
+        height: 315px;
+    }
+
+    /*Texto*/
+    h2{
+        font-size: 22px;
+    }
+    p{
+        font-size: 16px;
+    }
+
+    /*Boton*/
+    a{
+        width: 150px;
+        height: 40px;
+    }
+
+    a :hover{
+        width: 150px;
+        height: 40px;
+    }
+    a p{
+        padding-top: 5%;
+    }
+}
+
+/*Resolución 920px*/
+@media screen and (min-width:920px) {
+
+    /*Texto*/
+    h2{
+        font-size: 24px;
+    }
+    p{
+        font-size: 18px;
+    }
+    a p{
+        padding-top: 3%;
+    }
+}
+
+/*Resolución 1120px*/
+@media screen and (min-width:1120px) {
+    /*Imagen*/
+    img{
+        width: 415px;
+        height: 415px;
+    }
+
+    /*Texto*/
+
+    h2{
+        font-size: 25px;
+    }
+    p{
+        font-size: 20px;
+    }
+
+    /*Boton*/
+    a{
+        width: 200px;
+        height: 40px;
+    }
+
+    a :hover{
+        width: 200px;
+        height: 40px;
+    }
+    a p{
+        padding-top: 2%;
+    }   
+}

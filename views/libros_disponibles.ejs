@@ -1,0 +1,379 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/libros_disponibles.css" type="text/css"/>
+
+<!--Menú de opciones-->
+<div class="menuUsuario">
+  <%if(usuario[0].tipo == "usuario"){%>
+  <a type="button" href="/HomeUsuario/<%= usuario[0].identificador%>">
+    <center>
+    <img id="imgNavarUsuario" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <%}
+  else if(usuario[0].tipo == "servicioSocial"){%>
+    <a type="button" href="/servicio/homeServicio/<%= usuario[0].identificador%>">
+      <center>
+      <img id="imgNavarUsuario" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+    <%}%>
+  
+    <a type="button" href="/logout">
+    <center>
+    <img id="imgNavarUsuario" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Libros disponibles</h1>
+</header>
+<br /><br />
+<center>
+  <div class="botones">
+        <button id="boton" onclick="btnConsulta()" type="button" class="btn btn-primary">Área de Consulta</button>
+        <button id="boton" onclick="btnGeneral()" type="button" class="btn btn-danger">Área General</button>
+        <button id="boton" onclick="btnInfantil()" type="button" class="btn btn-success">Área Infantil</button>
+  </div>
+</center>
+<script src="/static/js/botonesLibros.js"></script>
+
+<br /><br />
+
+<!--Tablas-->
+<div class="container">
+  <!--Area de consulta-->
+  <div id="consulta" style="display: none;">
+    <table class="table">
+        <thead>
+          <tr>
+            <th colspan="3">
+                Área de Consulta
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%if(usuario[0].tipo == 'usuario'){%>
+          <tr id="color1">
+            <td>
+                <a class="btn btn-primary" href="/libro/0/<%= usuario[0].identificador%>" role="button">Consulta 0 - 99</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/libro/100/<%= usuario[0].identificador%>" role="button">Consulta 100 - 199</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/libro/200/<%= usuario[0].identificador%>" role="button">Consulta 200 - 299</a>
+            </td>
+          </tr>
+
+          <tr id="color2">
+            <td>
+                <a class="btn btn-primary" href="/libro/300/<%= usuario[0].identificador%>" role="button">Consulta 300 - 399</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/libro/400/<%= usuario[0].identificador%>" role="button">Consulta 400 - 499</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/libro/500/<%= usuario[0].identificador%>" role="button">Consulta 500 - 599</a>
+            </td>
+          </tr>
+
+          <tr id="color1">
+            <td>
+              <a class="btn btn-primary" href="/libro/600/<%= usuario[0].identificador%>" role="button">Consulta 600 - 699</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/libro/700/<%= usuario[0].identificador%>" role="button">Consulta 700 - 799</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/libro/800/<%= usuario[0].identificador%>" role="button">Consulta 800 - 899</a>
+            </td>
+          </tr>
+          <tr id="color2">
+            <td colspan="3">
+              <a class="btn btn-primary" href="/libro/900/<%= usuario[0].identificador%>" role="button">Consulta 900 - 999</a>
+            </td>
+          </tr>
+          <%}
+          else if(usuario[0].tipo == 'servicioSocial'){%>
+            <tr id="color1">
+              <td>
+                  <a class="btn btn-primary" href="/servicio/libro/0/<%= usuario[0].identificador%>" role="button">Consulta 0 - 99</a>
+              </td>
+              <td>
+                  <a class="btn btn-primary" href="/servicio/libro/100/<%= usuario[0].identificador%>" role="button">Consulta 100 - 199</a>
+              </td>
+              <td>
+                <a class="btn btn-primary" href="/servicio/libro/200/<%= usuario[0].identificador%>" role="button">Consulta 200 - 299</a>
+              </td>
+            </tr>
+  
+            <tr id="color2">
+              <td>
+                  <a class="btn btn-primary" href="/servicio/libro/300/<%= usuario[0].identificador%>" role="button">Consulta 300 - 399</a>
+              </td>
+              <td>
+                <a class="btn btn-primary" href="/servicio/libro/400/<%= usuario[0].identificador%>" role="button">Consulta 400 - 499</a>
+              </td>
+              <td>
+                  <a class="btn btn-primary" href="/servicio/libro/500/<%= usuario[0].identificador%>" role="button">Consulta 500 - 599</a>
+              </td>
+            </tr>
+  
+            <tr id="color1">
+              <td>
+                <a class="btn btn-primary" href="/servicio/libro/600/<%= usuario[0].identificador%>" role="button">Consulta 600 - 699</a>
+              </td>
+              <td>
+                  <a class="btn btn-primary" href="/servicio/libro/700/<%= usuario[0].identificador%>" role="button">Consulta 700 - 799</a>
+              </td>
+              <td>
+                <a class="btn btn-primary" href="/servicio/libro/800/<%= usuario[0].identificador%>" role="button">Consulta 800 - 899</a>
+              </td>
+            </tr>
+            <tr id="color2">
+              <td colspan="3">
+                <a class="btn btn-primary" href="/servicio/libro/900/<%= usuario[0].identificador%>" role="button">Consulta 900 - 999</a>
+              </td>
+            </tr>
+            <%}%>
+        </tbody>
+      </table>
+    </div>
+
+      <!--Tabla general-->
+      <div id="general" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="3">
+                  Área General
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if(usuario[0].tipo == 'usuario'){%>
+            <tr id="color1">
+              <td>
+                  <a class="btn btn-danger" href="/libroGeneral/0/<%= usuario[0].identificador%>" role="button">General 0 - 99</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/libroGeneral/100/<%= usuario[0].identificador%>" role="button">General 100 - 199</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/libroGeneral/200/<%= usuario[0].identificador%>" role="button">General 200 - 299</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td>
+                  <a class="btn btn-danger" href="/libroGeneral/300/<%= usuario[0].identificador%>" role="button">General 300 - 399</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/libroGeneral/400/<%= usuario[0].identificador%>" role="button">General 400 - 499</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/libroGeneral/500/<%= usuario[0].identificador%>" role="button">General 500 - 599</a>
+              </td>
+            </tr>
+
+            <tr id="color1">
+              <td>
+                <a class="btn btn-danger" href="/libroGeneral/600/<%= usuario[0].identificador%>" role="button">General 600 - 699</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/libroGeneral/700/<%= usuario[0].identificador%>" role="button">General 700 - 799</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/libroGeneral/800/<%= usuario[0].identificador%>" role="button">General 800 - 899</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td colspan="3">
+                <a class="btn btn-danger" href="/libroGeneral/900/<%= usuario[0].identificador%>" role="button">General 900 - 999</a>
+              </td>
+            </tr>
+            <%}
+            else if(usuario[0].tipo == 'servicioSocial'){%>
+              <tr id="color1">
+                <td>
+                    <a class="btn btn-danger" href="/servicio/libroGeneral/0/<%= usuario[0].identificador%>" role="button">General 0 - 99</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/servicio/libroGeneral/100/<%= usuario[0].identificador%>" role="button">General 100 - 199</a>
+                </td>
+                <td>
+                  <a class="btn btn-danger" href="/servicio/libroGeneral/200/<%= usuario[0].identificador%>" role="button">General 200 - 299</a>
+                </td>
+              </tr>
+  
+              <tr id="color2">
+                <td>
+                    <a class="btn btn-danger" href="/servicio/libroGeneral/300/<%= usuario[0].identificador%>" role="button">General 300 - 399</a>
+                </td>
+                <td>
+                  <a class="btn btn-danger" href="/servicio/libroGeneral/400/<%= usuario[0].identificador%>" role="button">General 400 - 499</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/servicio/libroGeneral/500/<%= usuario[0].identificador%>" role="button">General 500 - 599</a>
+                </td>
+              </tr>
+  
+              <tr id="color1">
+                <td>
+                  <a class="btn btn-danger" href="/servicio/libroGeneral/600/<%= usuario[0].identificador%>" role="button">General 600 - 699</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="/servicio/libroGeneral/700/<%= usuario[0].identificador%>" role="button">General 700 - 799</a>
+                </td>
+                <td>
+                  <a class="btn btn-danger" href="/servicio/libroGeneral/800/<%= usuario[0].identificador%>" role="button">General 800 - 899</a>
+                </td>
+              </tr>
+  
+              <tr id="color2">
+                <td colspan="3">
+                  <a class="btn btn-danger" href="/servicio/libroGeneral/900/<%= usuario[0].identificador%>" role="button">General 900 - 999</a>
+                </td>
+              </tr>
+              <%}%>
+          </tbody>
+        </table>
+      </div>
+      
+      <!--Tabla infantil-->
+      <div id="infantil" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="3">
+                  Área Infantil
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if(usuario[0].tipo == 'usuario'){%>
+            <tr id="color1">
+              <td>
+                  <a class="btn btn-success" href="/libroInfantil/0/<%= usuario[0].identificador%>" role="button">Infantil 0 - 99</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/libroInfantil/100/<%= usuario[0].identificador%>" role="button">Infantil 100 - 199</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/libroInfantil/200/<%= usuario[0].identificador%>" role="button">Infantil 200 - 299</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td>
+                  <a class="btn btn-success" href="/libroInfantil/300/<%= usuario[0].identificador%>" role="button">Infantil 300 - 399</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/libroInfantil/400/<%= usuario[0].identificador%>" role="button">Infantil 400 - 499</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/libroInfantil/500/<%= usuario[0].identificador%>" role="button">Infantil 500 - 599</a>
+              </td>
+            </tr>
+
+            <tr id="color1">
+              <td>
+                <a class="btn btn-success" href="/libroInfantil/600/<%= usuario[0].identificador%>" role="button">Infantil 600 - 699</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/libroInfantil/700/<%= usuario[0].identificador%>" role="button">Infantil 700 - 799</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/libroInfantil/800/<%= usuario[0].identificador%>" role="button">Infantil 800 - 899</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td colspan="3">
+                <a class="btn btn-success" href="/libroInfantil/900/<%= usuario[0].identificador%>" role="button">Infantil 900 - 999</a>
+              </td>
+            </tr>
+            <%}
+            else if(usuario[0].tipo == 'servicioSocial'){%>
+
+              <tr id="color1">
+                <td>
+                    <a class="btn btn-success" href="/servicio/libroInfantil/0/<%= usuario[0].identificador%>" role="button">Infantil 0 - 99</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="/servicio/libroInfantil/100/<%= usuario[0].identificador%>" role="button">Infantil 100 - 199</a>
+                </td>
+                <td>
+                  <a class="btn btn-success" href="/servicio/libroInfantil/200/<%= usuario[0].identificador%>" role="button">Infantil 200 - 299</a>
+                </td>
+              </tr>
+  
+              <tr id="color2">
+                <td>
+                    <a class="btn btn-success" href="/servicio/libroInfantil/300/<%= usuario[0].identificador%>" role="button">Infantil 300 - 399</a>
+                </td>
+                <td>
+                  <a class="btn btn-success" href="/servicio/libroInfantil/400/<%= usuario[0].identificador%>" role="button">Infantil 400 - 499</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="/servicio/libroInfantil/500/<%= usuario[0].identificador%>" role="button">Infantil 500 - 599</a>
+                </td>
+              </tr>
+  
+              <tr id="color1">
+                <td>
+                  <a class="btn btn-success" href="/servicio/libroInfantil/600/<%= usuario[0].identificador%>" role="button">Infantil 600 - 699</a>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="/servicio/libroInfantil/700/<%= usuario[0].identificador%>" role="button">Infantil 700 - 799</a>
+                </td>
+                <td>
+                  <a class="btn btn-success" href="/servicio/libroInfantil/800/<%= usuario[0].identificador%>" role="button">Infantil 800 - 899</a>
+                </td>
+              </tr>
+  
+              <tr id="color2">
+                <td colspan="3">
+                  <a class="btn btn-success" href="/servicio/libroInfantil/900/<%= usuario[0].identificador%>" role="button">Infantil 900 - 999</a>
+                </td>
+              </tr>
+              <%}%> 
+          </tbody>
+        </table>
+      </div>
+</div>
+<br />
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>

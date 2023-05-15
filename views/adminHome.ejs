@@ -1,0 +1,233 @@
+<%- include('templates/encabezado')%>
+
+<link rel="stylesheet" href="/static/css/userHome.css" type="text/css"/>
+
+<div class="container">
+  <div class="row">
+
+    <!--Menú de opciones-->
+    <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Menú</h2>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>
+                  <a type="button" href="/admin/LibrosAdmin/<%= administrador[0].identificador%>">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/libro.png" alt="404Imagen Link">
+                    <br />
+                    Libros
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" href="/admin/LibrosPrestadosAdmin/<%= administrador[0].identificador%>">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/prestamos.png" alt="404Imagen Link">
+                    <br />
+                    Prestamos
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/evento.png" alt="404Imagen Link">
+                    <br />
+                    Eventos
+                  </center>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a type="button">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/manualidades.png" alt="404Imagen Link">
+                    <br />
+                    Talleres
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" href="/admin/tablaServicio/<%= administrador[0].identificador%>">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/estudiante.png" alt="404Imagen Link">
+                    <br />
+                    S.social
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" href="/admin/comunidad/<%= administrador[0].identificador%>">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/comunidad.png" alt="404Imagen Link">
+                    <br />
+                    Comunidad
+                  </center>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a type="button">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/tarea.png" alt="404Imagen Link">
+                    <br />
+                    Tareas
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" href="/admin/registrar/<%= administrador[0].identificador%>">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/nuevo.png" alt="404Imagen Link">
+                    <br />
+                    Registrar
+                  </center>
+                  </a>
+                </td>
+                <td>
+                  <a type="button">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/user.png" alt="404Imagen Link">
+                    <br />
+                    Perfil
+                  </center>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <a type="button" href="/logout">
+                    <center>
+                    <img id="imgNavar" src="/static/img/navbar/salir.png" alt="404Imagen Link">
+                    <br />
+                    Salir
+                  </center>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-lg-1 col-md-12 col-sm-12"></div>
+
+    <!--Informacion del usuario-->
+    <div class="col-lg-7 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Bienvenido <%= administrador[0].nombre%></h2>
+        </div>
+        <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Información personal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="row">
+                  <td>
+                    <b>Nombre(s):</b> 
+                    <br />
+                    <%= administrador[0].nombre%>
+                  </td>
+                  <td>
+                    <b>Apellido(s):</b>
+                    <br />
+                    <%= administrador[0].apellido%>
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <b>Correo:</b>
+                    <br />
+                    <%= administrador[0].correo%>
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <b>Tipo de usuario:</b>
+                    <br />
+                      Administrador  
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2">Datos principales</th>
+                </tr>
+                <tr id="row">
+                  <td>
+                    <b>Libros prestados:</b> 
+                    <br />
+                      <%prestamos.forEach((prestamo)=>{ %>
+                        <li><%=prestamo.titulo%>/ V.<%=prestamo.volumen%>/ <%=prestamo.categoria%></li>
+                      <%});%>
+                  </td>
+                  <td>
+                    <b>Servicio social</b>
+                    <br />
+                    <% 
+                    servicio.forEach((servicio)=>{
+                    %>
+                    <li><%= servicio.nombre%> <%= servicio.apellido%></li>
+                    <%
+                    });
+                     %>
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td>
+                    <b> Tramites a realizar:</b>
+                    <br />
+                    Ninguno
+                  </td>
+                  <td>
+                    <b>Eventos a realizar:</b>
+                    <br />
+                      Ninguno
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />
+
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+    </div>
+  </body>
+</html>
+
+

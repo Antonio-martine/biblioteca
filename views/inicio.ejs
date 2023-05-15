@@ -1,0 +1,141 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/inicio.css" type="text/css"/>
+
+<div class="row">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="btn-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" id="home" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Eventos">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Acerca-de">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Login">Ingresar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div>
+    <br />
+    <div class="container">
+        <div class="rows">
+
+                <!--Titulo de la página-->
+                <center>
+                <div class="header">
+                    <h1>Biblioteca Pública Profesora Carmen Martínez Trejo</h1>
+                    <p id="textOp">¡Tu biblioteca más cerca que nunca!</p>
+                </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Actividades (subtitulo)-->
+<div class="row">
+    <div class="col-sm-4 col-md-6 col-lg-4">
+        <div class="subtitulo">
+            <h1>Actividades</h1>
+        </div>
+    </div>
+</div> 
+
+<!--Tarjetas de eventos-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="card">
+                <img src="/static/img/evento.jpg" class="card-img-top" alt="404Error">
+                <div class="card-body">
+                <h5 class="card-title">Eventos a la comunidad</h5>
+                <p class="card-text">Biblioteca Profesora Carmen Martínez Trejo expone su trabajo a su comunidad principal</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="card">
+                <img src="/static/img/Imagen26.jpeg" class="card-img-top" alt="404Error">
+                <div class="card-body">
+                <h5 class="card-title">Talleres de verano</h5>
+                <p class="card-text">Ven, diviertete y aprende dentro de nuestros talleres de verano</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="card">
+                <img src="/static/img/Imagen2.jpeg" class="card-img-top" alt="404Error">
+                <div class="card-body">
+                <h5 class="card-title">Visitas escolares</h5>
+                <p class="card-text">Es de nuestro agrado siempre recibir a nuestras escuelas públicas y brindarles un poco de nuestro aprendizaje</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="card">
+                <img src="/static/img/Imagen35.jpeg" class="card-img-top" alt="404Error">
+                <div class="card-body">
+                <h5 class="card-title">Hora del cuento</h5>
+                <p class="card-text">Leer un libro nos abre nuestra imaginación, y nos hace crear nuevas historias</p>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+<!--Ubicación (subtitulo)-->
+<div class="col-sm-4 col-md-6 col-lg-4">
+    <header class="subtitulo" id="principal">
+        <h1>Ubicación</h1>
+    </header>
+</div>
+<br />
+
+<!--Ubicacion (mapa)-->
+<div class="container">
+    <div class="col-sm-4 col-md-6 col-lg-12">
+        <center>
+            <div id="map">
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d660.89884918048!2d-99.98772215674461!3d20.440187478158617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d374a6e4e41ca5%3A0xf79009635d980145!2sBiblioteca%20P%C3%BAblica%20Profesora%20Carmen%20Mart%C3%ADnez%20Trejo!5e0!3m2!1ses-419!2smx!4v1675363615595!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </center>
+    </div>
+</div>
+
+<div class="footer">
+        <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+            <center>
+                <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+            </center>
+        </a>
+        <a type="button" href="">
+            <center>
+                <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+            </center>
+        </a>
+        <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+            <center>
+                <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+            </center>
+        </a>
+        <a type="button" href="">
+            <center>
+                <img id="imgFooter" src="/static/img/icons/gmail.png">
+            </center>
+        </a>
+</div>
+</body>
+</html>
+
+

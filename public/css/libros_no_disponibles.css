@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/**Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Principal*/
+body{
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Menu*/
+.menu{
+    margin-top: 2%;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    margin-left: 2%;
+    float: left;
+    border-radius: 22px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Encabezado*/
+.encabezado{
+    background-image: url("/static/img/Libros.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    background-color:#005796;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 0px 0px 22px 22px;
+    vertical-align: center;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+header h1:hover{
+    color: #ffbc08;
+}
+
+/*Botones*/
+#boton{
+    margin: 1%;
+}
+
+/*Tabla*/
+.table{
+    border: 1% solid white;
+}
+thead{
+    background-color: #005796;
+}
+thead th{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+thead th:hover{
+    color: black;
+    background-color: #ffbc08;
+}
+tbody td{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+#verMas{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+#row1{
+    background-color: #96cbf2;
+}
+#row2{
+    background-color: white;
+}
+td{
+    text-align: center;
+}
+
+/*Footer*/
+.footer{
+    text-align: center;
+    background-color: #005796;
+    height: 80px;
+}
+.footer a{
+    text-decoration: none;
+}
+
+
+/*Resolucion 320px*/
+@media screen and (min-width:320px) {
+    /*Menu*/
+    #imgNavar{ /**/
+        width: 35px;
+        height: 35px; 
+    }
+    .menu{
+        width: 115px;
+    }
+    .menu a{
+        font-size: 12px;
+    }
+
+    /*Encabezado*/
+    .encabezado{
+        height: 180px;
+    }
+    header{
+        padding-top: 2%;
+        height: 40px;
+    }
+        header h1{
+        font-size: 16px;
+    }
+
+    /*Botones*/
+    #boton{
+        font-size: 11px;
+    }
+
+    /*Tabla*/
+    thead th{
+        font-size: 7px;
+    }
+    tbody td{
+        font-size: 7px;
+    }
+    #verMas{
+        font-size: 7px;
+        height: 40px;
+    }
+
+    /*Footer*/
+    #imgFooter{
+        width: 40px;
+        height: 40px;
+    }
+    .footer a{
+        padding-top: 5%;
+    }
+}
+
+/*Resolucion 520px*/
+@media screen and (min-width:520px) {
+    /*Menu*/
+    #imgNavar{ /**/
+    width: 40px;
+    height: 40px; 
+    }
+    .menu a{
+    font-size: 14px;
+    }
+    .menu{
+    width: 125px;
+    }
+
+    /*Encabezado*/
+    .encabezado{
+        height: 220px;
+    }
+    header{
+        padding-top: 2%;
+        height: 50px;
+    }
+    header h1{
+        font-size: 18px;
+    }
+
+    /*Tabla*/
+    thead th{
+        font-size: 12px;
+    }
+    tbody td{
+        font-size: 12px;
+    }
+    #verMas{
+        font-size: 12px;
+        height: 35px;
+    }
+
+    /*Footer*/
+    .footer a{
+        padding-top: 2%;
+    }
+}
+
+/*Resolucion 720px*/
+@media screen and (min-width:720px) {
+    /*Encabezado*/
+    .encabezado{
+    height: 300px;
+    }
+    header{
+    padding-top: 1%;
+    height: 55px;
+    }
+    header h1{
+    font-size: 20px;
+    }
+
+    /*Botones*/
+    #boton{
+        font-size: 14px;
+        width: 140px;
+    }
+
+    /*Tabla*/
+    thead th{
+        font-size: 14px;
+    }
+    tbody td{
+        font-size: 14px;
+    }
+    #verMas{
+        font-size: 14px;
+        width: 80px;
+        height: 35px;
+    }
+}
+
+/*Resolución 920px*/
+@media screen and(min-width:920px) {
+    /*Footer*/
+    .footer a{
+      padding-top: 1%;
+    }
+  }
+

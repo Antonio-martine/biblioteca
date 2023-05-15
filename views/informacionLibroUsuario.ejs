@@ -1,0 +1,228 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/verMas.css" type="text/css"/>
+
+<!--Código-->
+<%
+  var ordenInicio;
+  if(libro[0].orden >= 0 && libro[0].orden < 100 ){
+    ordenInicio = 0;
+  }
+  else if(libro[0].orden >= 100 && libro[0].orden < 200 ){
+    ordenInicio = 100;
+  }
+  else if(libro[0].orden >= 200 && libro[0].orden < 300 ){
+    ordenInicio = 200;
+  }
+  else if(libro[0].orden >= 300 && libro[0].orden < 400 ){
+    ordenInicio = 300;
+  }
+  else if(libro[0].orden >= 400 && libro[0].orden < 500 ){
+    ordenInicio = 400;
+  }
+  else if(libro[0].orden >= 500 && libro[0].orden < 600 ){
+    ordenInicio = 500;
+  }
+  else if(libro[0].orden >= 600 && libro[0].orden < 700 ){
+    ordenInicio = 600;
+  }
+  else if(libro[0].orden >= 700 && libro[0].orden < 800 ){
+    ordenInicio = 700;
+  }
+  else if(libro[0].orden >= 800 && libro[0].orden < 900 ){
+    ordenInicio = 800;
+  }
+  else if(libro[0].orden >= 900 && libro[0].orden < 1000 ){
+    ordenInicio = 900;
+  }
+ 
+%>
+
+<%
+var categoria;
+switch(libro[0].categoria){
+    case 'consulta':
+        categoria = "Consulta";
+        break;
+    case 'general':
+        categoria = "General";
+        break;
+    case 'infantil':
+        categoria = "Infantil";
+        break;
+    default: 
+        console.log("Error al insertar un valor a categoria");
+        break;
+}
+%>
+
+
+<!--Menú de opciones-->
+<div class="menuUsuario">
+   <%if(categoria == "Consulta"){%>
+        <a type="button" href="/libro/<%= ordenInicio%>/<%= usuario[0].identificador%>">
+            <center>
+            <img id="imgNavarUsuario" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+            <br />
+            Regresar
+            </center>
+        </a>
+    <%}else if(categoria == "General"){%>
+        <a type="button" href="/libroGeneral/<%= ordenInicio%>/<%= usuario[0].identificador%>">
+            <center>
+            <img id="imgNavarUsuario" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+            <br />
+            Regresar
+            </center>
+          </a>
+    <%}else if(categoria == "Infantil"){%>
+        <a type="button" href="/libroInfantil/<%= ordenInicio%>/<%= usuario[0].identificador%>">
+            <center>
+            <img id="imgNavarUsuario" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+            <br />
+            Regresar
+            </center>
+          </a>
+        <%}%>
+    <a type="button" href="/HomeAdmin/<%= usuario[0].identificador%>">
+      <center>
+      <img id="imgNavarUsuario" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+    <a type="button" href="/logout">
+      <center>
+      <img id="imgNavarUsuario" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+      <br />
+      Salir
+    </center>
+    </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Información Importante</h1>
+</header>
+<br />
+
+<br />
+<div class="container">
+    <div class="row">
+
+        <!--Cards Prestamos-->
+        <div class="col-lg-6 col-md-12 col-sm-12" id="prestamo">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+                                Historial de prestámos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Fecha Entrega:</th>
+                            <th>Destinario:</th>
+                            <th>Información:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row1">
+                            <td>asfasdfbshdh</td>
+                            <td>dfjsadfhsd</td>
+                            <td>
+                                <a type="button" class="btn btn-primary" href="#">
+                                    Ver más
+                                </a>
+                            </td>
+                        </tr>
+                        <tr id="row2">
+                            <td>asfasdfbshdh</td>
+                            <td>dfjsadfhsd</td>
+                            <td>
+                                <a type="button" class="btn btn-primary" href="#">
+                                    Ver más
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        <!--Cards Datos Libros-->
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            <%= libro[0].titulo%>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row1">
+                        <td><b>Autor:</b>
+                            <br /> 
+                            <%= libro[0].autor%>
+                        </td>
+                        <td><b>Categoria:</b>
+                            <br /> 
+                            <%= categoria%>
+                        </td>
+                        <td><b>Volumen:</b>
+                            <br /> 
+                            V.<%= libro[0].volumen%>
+                        </td>
+                    </tr>
+                    <tr id="row2">
+                        <td><b>Editorial:</b>
+                            <br /> 
+                            <%= libro[0].editorial%>
+                        </td>
+                        <td colspan="2"><b>Orden:</b>
+                            <br /> 
+                            <%= libro[0].orden%>
+                        </td>
+                    </tr>
+                    <tr id="row1">
+                        <td colspan="3"><b>Descripción:</b>
+                            <br /> 
+                            <%= libro[0].descripcion%>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr id="row2">
+                        <td colspan="3" style="text-align: center;">
+                            <a type="button" class="btn btn-danger" href="/modificarLibro/<%= libro[0].id%>/<%= usuario[0].identificador%>/<%= libro[0].categoria%>">
+                                Pedir
+                            </a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,356 @@
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/**Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Principal*/
+body{
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Navbar*/
+nav{
+    background-color: #005796;
+}
+
+.navbar a{
+    color: white;
+    font-family: 'Roboto', sans-serif;;
+}
+
+
+.btn-menu{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#textOp{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+
+/*Encabezado*/
+.header{
+    background-color: #005796;
+    text-align: center;
+    border-radius: 22px 22px 22px 22px;
+	vertical-align: center;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.header h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/*Subtitulo*/
+.subtitulo{
+    background-color: #005796;
+    text-align: center;
+    margin-top: 7%;
+    border:none;
+    border-radius:0px 22px 22px 0px;
+}
+
+.subtitulo h1{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+/*Actividades*/
+.card{
+    margin: 7%;
+}
+
+/*Mapa*/
+iframe{
+    border: solid #005796;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    margin-bottom: 4%;
+}
+
+/*Tarjeta Actividades*/
+.card-body{
+    background-color: #005796;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    color: white;
+}
+
+.card-title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.card-text{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Footer*/
+.footer{
+    text-align: center;
+    background-color: #005796;
+    height: 65px;
+}
+.footer a{
+    text-decoration: none;
+}
+
+
+/*Resolucion 320px*/
+@media screen and (min-width:320px) {
+
+    /*Navbar*/
+    .navbar a{
+        margin-left: 5%;
+        font-size: 14px;
+    }
+    .navbar a:hover{
+        font-weight: bold;
+        color: black;
+        background-color: #ffbc08;
+    }
+    .btn-menu{
+        width: 35px;
+        height: 35px;
+        margin-left: 85%;
+    }
+
+    /*Encabezado*/
+    .header{
+        padding-top: 5%;
+        height: 75px;
+        width: 277px;
+    }
+    .header h1{
+        font-size: 20px;
+    }
+    #textOp{
+        display: none;
+    }
+
+    /*Subtitulo*/
+    .subtitulo{
+        width: 200px;
+        height: 30px;
+    }
+    .subtitulo h1{
+        font-size: 20px;
+    }
+
+    /*Tarjeta Actividades*/
+    .card-title{
+        font-size: 18px;
+    }
+    
+    .card-text{
+        font-size: 14px;
+    }
+
+    /*Mapa*/
+    iframe{
+        width: 280px;
+        height: 200px;
+    }
+
+    /*Footer*/
+    #imgFooter{
+        width: 40px;
+        height: 40px;
+    }
+    .footer a{
+        padding-top: 5%;
+    }
+
+}
+
+/*Resolucion 420px*/
+@media screen and (min-width:420px) {
+    .header{
+        padding-top: 3%;
+        height: 75px;
+        width: 380px;
+    }
+}
+
+/*Resolucion 520px*/
+@media screen and (min-width:520px) {
+    /*Navbar*/
+    .navbar a{
+        font-size: 16px;
+    }
+    .btn-menu{
+        margin-left: 89%;
+    }
+
+    /*Encabezado*/
+    .header{
+        height: 75px;
+        width: 477px;
+    }
+    .header h1{
+        font-size: 20px;
+    }
+    #textOp{
+        display: block;
+    }
+
+    /*Subtitulo*/
+    .subtitulo{
+        width: 250px;
+        height: 40px;
+    }
+    .subtitulo h1{
+        font-size: 22px;
+    }
+
+    /*Tarjeta Actividades*/
+    .card-title{
+        font-size: 20px;
+    }
+    
+    .card-text{
+        font-size: 16px;
+    }
+    /*Mapa*/
+    iframe{
+        width: 420px;
+        height: 250px;
+    }
+
+    /*Footer*/
+    .footer a{
+        padding-top: 2%;
+    }
+
+    
+}
+
+/*Resolucion 720px*/
+@media screen and (min-width:720px) {
+    /*navbar*/
+    .btn-menu{
+        margin-left: 93%;
+    }
+
+    /*Encabezado*/
+    .header{
+        height: 130px;
+        width: 517px;
+    }
+    .header h1{
+        font-size: 28px;
+    }
+
+    /*Subtitulo*/
+    .subtitulo{
+        width: 375px;
+        height: 50px;
+    }
+    .subtitulo h1{
+        font-size: 28px;
+    }
+
+    /*Tarjeta Actividades*/
+    .card-title{
+        font-size: 24px;
+    }
+    
+    .card-text{
+        font-size: 18px;
+    }
+
+    /*Mapa*/
+    iframe{
+        width: 560px;
+        height: 300px;
+    }
+
+
+}
+
+/*Resolucion 920px*/
+@media screen and (min-width:920px) {
+    /*Encabezado*/
+    .header{
+        width: 697px;
+        height: 125px;
+    }
+    #textOp{
+        font-size: 18px;
+    }
+
+    /*Subtitulo*/
+    .subtitulo{
+        width: 475px;
+    }
+
+    /*Mapa*/
+    iframe{
+        width: 700px;
+        height: 400px;
+    }
+
+    /*Footer*/
+    .footer a{
+        padding-top: 1%;
+    }
+}
+
+/*Resolucion 992px*/
+@media screen and (min-width:992px) {
+    /*Navbar*/
+    .btn-menu{
+        display: none;
+    }
+    .navbar a{
+        
+        font-size: 14px;
+    }
+    #navbarSupportedContent{
+        padding-left: 60%;
+    }
+    li a{
+        text-align: center;
+        width: 80px;
+    }
+}
+
+/*Resolucion 1120px*/
+@media screen and (min-width:1120px) {
+    /*Navbar*/
+    #navbarSupportedContent{
+        padding-left: 65%;
+    }
+
+    /*Mapa*/
+    iframe{
+        width: 900px;
+        height: 400px;
+    }
+}
+
+/*Resolucion 1320px*/
+@media screen and (min-width:1320px) {
+        /*Navbar*/
+        #navbarSupportedContent{
+            padding-left: 75%;
+        }
+}
+
+
+
+
+
+    
+
+

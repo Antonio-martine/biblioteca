@@ -1,0 +1,88 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/login.css" type="text/css"/>
+<br />
+
+<!--Menú de opciones-->
+<div class="menu">
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<center>
+  <div class="card">
+    <div class="card-header">
+      <h3>Bienvenido</h3>
+      <img src="/static/img/icons/personas.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/admin/registrar" method="post">
+        <div>
+            <input type="hidden" name="estado" class="form-control" value="true">
+            <input type="hidden" name="idAdmin" class="form-control" value="<%= administrador[0].identificador%>">
+        </div>
+        <div>
+          <label>Foto de perfil:</label>
+          <input type="file" name="perfil" class="form-control">
+        </div>
+        <div>
+        <label>Nombre:</label>
+        <input type="text" name="nombre" class="form-control">
+      </div>
+      <div>
+        <label>Apellido:</label>
+        <input type="text" name="apellido" class="form-control">
+      </div>
+      <div>
+        <label>Tipo:</label>
+        <br />
+        <select id="selection" name="tipo" required class="form-control">
+            <option>Seleccione un tipo:</option>
+            <option value="admin">Administrador</option>
+            <option value="usuario">Usuario</option>
+        </select>
+      </div>
+      <div>
+      <label>Correo:</label>
+        <input type="email" name="correo" class="form-control">
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" name="password" class="form-control" id="id_password">
+        <br />
+        <div class="btn-password">
+          <button type="button" id="togglePassword">Mostrar contraseña</button>
+        </div>
+        <script>
+          const togglePassword = document.querySelector('#togglePassword');
+          const password = document.querySelector('#id_password');
+
+          togglePassword.addEventListener('click', function (e) {
+              // toggle the type attribute
+              const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+              password.setAttribute('type', type);
+          });
+      </script>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+  </div>
+</center>
+<br /><br />
+
+
+<%- include('templates/pie')%>

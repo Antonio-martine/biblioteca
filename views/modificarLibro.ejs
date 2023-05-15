@@ -1,0 +1,90 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/registrarLibro.css" type="text/css"/>
+<br />
+
+<!--Menú de opciones-->
+<div class="menu">
+  <a type="button" href="/admin/informacionLibro/<%= libro[0].id%>/<%= libro[0].categoria%>/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+    <br />
+    Regresar
+  </center>
+  </a>
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<center>
+  <div class="card">
+    <div class="card-header">
+      <h3>¿Hay ajustes en tu información?</h3>
+      <img src="/static/img/navbar/nuevoLibro.png" alt="404Error"/>
+    </div>
+    <div class="card-body">
+      <form action="/admin/ModificarLibro/<%= libro[0].id%>/<%= libro[0].categoria%>/<%= administrador[0].identificador%>" method="post">
+        <div>
+          <label>Titulo:</label>
+          <input type="text" name="titulo" class="form-control" value="<%= libro[0].titulo%>" required>
+        </div>
+        <div>
+        <label>Autor:</label>
+        <input type="text" name="autor" class="form-control" value="<%= libro[0].autor%>" required>
+      </div>
+      <div>
+      <label>Orden:</label>
+        <input type="text" name="orden" class="form-control" value="<%= libro[0].orden%>" required>
+      </div>
+      <div>
+        <label>Editorial:</label>
+        <input type="text" name="editorial" class="form-control" value="<%= libro[0].editorial%>" required>
+      </div>
+      <div>
+        <label>Descripción:</label>
+        <textarea name="descripcion" rows="5" class="form-control"><%= libro[0].descripcion%></textarea>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button type="submit">Ingresar</button>
+    </div>
+  </form>
+  </div>
+</center>
+<br /><br />
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+  </body>
+</html>

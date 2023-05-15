@@ -1,0 +1,234 @@
+<%- include('templates/encabezado')%>
+
+<link rel="stylesheet" href="/static/css/informacion_Estudiante.css" type="text/css"/>
+<!--Menú de opciones-->
+<div class="menu">
+    <a type="button" href="/admin/tablaServicio/<%= administrador[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+      </center>
+    </a>
+    <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+    <a type="button" href="/logout">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+      <br />
+      Salir
+    </center>
+    </a>
+  </div>
+
+  <div class="encabezado"></div>
+  <header id="principal">
+      <h1>Servicio Social</h1>
+  </header>
+  <br />
+
+  <div class="container">
+    <div class="row">
+  
+      <!--Card1: Horas-->
+    <div class="col-lg-5 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Horas Servicio</h2>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+                <tr id="row">
+                    <th>#</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Horas</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% 
+                var i = 1;
+                var totalHoras = 0;
+                horaServicio.forEach((horaServicio)=>{
+
+            %>
+              <tr id="row">
+                <td><%= i%></td>
+                <td><%= horaServicio.fecha1%></td>
+                <td><%= horaServicio.fecha2%></td>
+                <td><%= horaServicio.hora%></td>
+              </tr>
+              <%
+                totalHoras = totalHoras + horaServicio.hora;
+                });
+              %>
+              <tr id="row">
+                <th>Total de horas:</th>
+                <th><%= totalHoras%></th>
+                <th>Horas Faltantes:</th>
+                <th><%= servicio[0].totalHoras - totalHoras %></th>
+              </tr>
+            </tbody>
+            
+            <tfoot>
+              <form action="/admin/RegistrarHora/<%= administrador[0].identificador%>/<%= servicio[0].correo%>" method="post">
+                <tr id="row">
+                  <td colspan="2">
+                    <div>
+                      <label><b>Inicio de semana:</b></label>
+                      <input type="date" name="fecha1" class="form-control">
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <label><b>Fin de semana:</b></label>
+                      <input type="date" name="fecha2" class="form-control">
+                    </div>
+                  </td> 
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <label><b>Horas trabajadas:</b></label>
+                    <input type="number" class="form-control" name="hora">
+                  </td>
+                  <td colspan="2">
+                    <div class="menu-opciones">
+                      <button type="submit" class="btn btn-primary" > Registrar
+                      </button>
+                      <a type="button" class="btn btn-danger"  href="/admin/borrar/<%= administrador[0].identificador%>/<%= servicio[0].correo%>"> 
+                        Borrar todo
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </form>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+      <!--Informacion del usuario-->
+      <div class="col-lg-7 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h2>Estudiante <%= servicio[0].nombre%></h2>
+          </div>
+          <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th id="sub" colspan="2">Información personal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="row">
+                    <td>
+                      <b>Nombre(s):</b> 
+                      <br />
+                      <%= servicio[0].nombre%>
+                    </td>
+                    <td>
+                      <b>Apellido(s):</b>
+                      <br />
+                      <%= servicio[0].apellido%>
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td colspan="2">
+                      <b>Correo:</b>
+                      <br />
+                      <%= servicio[0].correo%>
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td colspan="2">
+                      <b>Contraseña:</b>
+                      <br />
+                      <%= servicio[0].password%>
+                    </td>
+                    </tr>
+                    <tr id="row">
+                    <td colspan="2">
+                      <b>Tipo de usuario:</b>
+                      <br />
+                      Servicio Social   
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td colspan="2">
+                      <b>Fecha de inicio de servicio:</b>
+                      <br />
+                      <%= servicio[0].fechaInicio%>
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td colspan="2">
+                      <b>Fecha de fin de servicio:</b>
+                      <br />
+                      <%= servicio[0].fechaTermino%>
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td>
+                      <b>Escuela</b>
+                      <br />
+                      <%= servicio[0].escuela%>
+                    </td>
+                  </tr>
+                  <tr id="row">
+                    <td colspan="2">
+                      <label><b>Nota: </b>Por tu seguridad, se mostrará su contraseña encriptados</label></td>
+                  </tr>
+                    <th colspan="2">Acciones:</th>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="text-align: center;">
+                      <div class="menu-opciones">
+                        <a type="button" href="/admin/modificarAlumno/<%= administrador[0].identificador%>/<%= servicio[0].correo%>">
+                          <center>
+                          <img id="imgOpcion" src="/static/img/navbar/modificar.png" alt="404Imagen Link">
+                          <br />
+                          Modificar
+                        </center>
+                        </a>
+                        <a type="button" href="/admin/borrarAlumno/<%= administrador[0].identificador%>/<%= servicio[0].correo%>">
+                          <center>
+                          <img id="imgOpcion" src="/static/img/navbar/eliminar.png" alt="404Imagen Link">
+                          <br />
+                          Eliminar
+                        </center>
+                        </a>
+                        <%if(totalHoras >= servicio[0].totalHoras){
+                        %>
+                        <a type="button" href="/admin/servicioConcluido/<%= administrador[0].identificador%>/<%= servicio[0].id%>">
+                          <center>
+                          <img id="imgOpcion" src="/static/img/navbar/aceptar.png" alt="404Imagen Link">
+                          <br />
+                          Concluir
+                        </center>
+                        </a>
+                        <%
+                      }
+                        %>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<br />
+
+
+<%- include('templates/pie')%>

@@ -1,0 +1,234 @@
+/*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/*Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/*Principal*/
+body {
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  } 
+
+.container{
+    margin-top: 4%; /**/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+td a:hover{
+    background-color: #ffbc08;
+    font-weight: bold;
+}
+
+/*Card*/
+.card{
+    margin-top: 2%;/**/
+}
+/*Card - Card-header*/
+.card-header{
+    background-color: #005796;
+    text-align: center;
+}
+.card-header h2{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*table*/
+th{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+td{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Footer*/
+.footer{
+    text-align: center;
+    background-color: #005796;
+    height: 65px;
+}
+.footer a{
+    text-decoration: none;
+}
+
+
+/*Resolución 320px*/
+@media screen and (min-width:320px) {
+    /*Card*/
+    .card-header h2{
+        font-size: 18px;
+    }
+    td a{
+        font-size: 12px;
+        width: 70px;
+    }
+    #imgNavar{
+        width: 35px;
+        height: 35px;
+    }
+
+    /*Table Card*/
+    th{
+        font-size: 12px;
+    }
+    td{
+        font-size: 11px;
+    }
+
+    /*Footer*/
+    #imgFooter{
+        width: 40px;
+        height: 40px;
+    }
+    .footer a{
+        padding-top: 5%;
+    }
+
+}
+
+/*Resolución 520px*/
+@media screen and (min-width:520px) {
+    /*Card*/
+    .card-header h2{
+        font-size: 20px;
+    }
+    td a{
+        font-size: 14px;
+        width: 90px;
+    }
+
+    #imgNavar{
+        width: 40px;
+        height: 40px;
+    }
+
+    /*Table Card*/
+    th{
+        font-size: 14px;
+    }
+    td{
+        font-size: 12px;
+    }
+
+    /*Footer*/
+    .footer a{
+        padding-top: 2%;
+    }
+
+}
+
+/*Resolución 720px*/
+@media screen and (min-width:720px) {
+    /*Card*/
+    .card-header h2{
+        font-size: 22px;
+    }
+
+    #imgNavar{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/*Resolución 920px*/
+@media screen and (min-width:920px) {
+    /*Table Card*/
+    th{
+        font-size: 16px;
+    }
+    td{
+        font-size: 14px;
+    }
+    /*Footer*/
+    .footer a{
+        padding-top: 1%;
+    }
+}
+
+
+
+/*
+@media screen and (max-width:360px) {
+    #titulo{
+        display: none;
+    }
+    footer img{
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+    }
+    footer{
+        height: 55px;
+        background-color: #005796;
+        text-align: center;
+    }
+
+    /*Table
+    #row td{
+        font-size: 11px;
+    }
+
+    /*Card
+    .card{
+        margin: 3%;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    #titulo{
+        display: none;
+    }
+    footer img{
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+    }
+    footer{
+        height: 55px;
+        background-color: #005796;
+        text-align: center;
+    }
+
+
+    /*Card
+    .card{
+        margin: 2%;
+    }
+    td{
+        font-size: 12px;
+    }    
+}
+
+@media screen and (max-width:720px) {
+    #titulo{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .navbar a{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:1700px) {
+    .navbar a{
+        font-size: 15px;
+    }
+}
+
+

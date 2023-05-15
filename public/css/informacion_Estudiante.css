@@ -1,0 +1,153 @@
+body {
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  /*Menu*/
+  .menu{
+    margin-top: 2%;
+    background-image: url('/static/img/backgrounds/Fondo1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    width: 200px;
+    margin-left: 2%;
+    float: left;
+    border-radius: 22px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#imgNavar{
+    width: 50px;
+    height: 50px;
+}
+
+#imgOpcion{
+    width: 42px;
+    height: 42px;
+}
+
+/*Encabezado*/
+.encabezado{
+    height: 350px;
+    background-image: url("/static/img/servicioSocial.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    height: 65px;
+    background-color:#005796;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 0px 0px 22px 22px;
+	vertical-align: center;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+
+}
+
+header h1:hover{
+    color: #ffbc08;
+}
+
+/*Menu opciones*/
+.menu-opciones a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 2%;
+}
+
+
+
+/*Tablas*/
+
+.card-header{
+    text-align: center;
+    background-color: #005796;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+th{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.td label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+td{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+#sub{
+    font-size: 25px;
+}
+
+@media screen and (max-width:360px) {
+    header{
+        height: 35px;
+    }
+    .encabezado{
+        height: 250px;
+    }
+    
+    #row th{
+        font-size: 11px;
+    }
+    #row td{
+        font-size: 11px;
+    }
+    #row input{
+        font-size: 11px;
+        width: 110px;
+    }
+    #row button{
+        font-size: 11px;
+        width: 110px;
+        margin: 2%;
+    }
+    #row a{
+        font-size: 11px;
+        width: 110px;
+    }
+
+    .menu a{
+        font-size: 11px;
+    }
+
+    .card{
+        margin: 3%;
+    }
+
+    footer img{
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+    }
+    footer{
+        height: 55px;
+    }
+}

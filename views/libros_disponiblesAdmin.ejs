@@ -1,0 +1,239 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/libros_disponibles.css" type="text/css"/>
+
+<!--Menú de opciones-->
+<div class="menu">
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/admin/agregarLibro/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/registrarLibro.png" alt="404Imagen Link">
+    <br />
+    Registrar
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Libros disponibles</h1>
+</header>
+<br /><br />
+<center>
+  <div class="botones">
+        <button id="boton" onclick="btnConsulta()" type="button" class="btn btn-primary">Área de Consulta</button>
+        <button id="boton" onclick="btnGeneral()" type="button" class="btn btn-danger">Área General</button>
+        <button id="boton" onclick="btnInfantil()" type="button" class="btn btn-success">Área Infantil</button>
+  </div>
+</center>
+<script src="/static/js/botonesLibros.js"></script>
+
+<br /><br />
+
+<!--Tablas-->
+<div class="container">
+  <!--Area de consulta-->
+  <div id="consulta" style="display: none;">
+    <table class="table">
+        <thead>
+          <tr>
+            <th colspan="3">
+                Área de Consulta
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="color1">
+            <td>
+                <a class="btn btn-primary" href="/admin/libro/0/<%= administrador[0].identificador%>" role="button">Consulta 0 - 99</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/admin/libro/100/<%= administrador[0].identificador%>" role="button">Consulta 100 - 199</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/admin/libro/200/<%= administrador[0].identificador%>" role="button">Consulta 200 - 299</a>
+            </td>
+          </tr>
+
+          <tr id="color2">
+            <td>
+                <a class="btn btn-primary" href="/admin/libro/300/<%= administrador[0].identificador%>" role="button">Consulta 300 - 399</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/admin/libro/400/<%= administrador[0].identificador%>" role="button">Consulta 400 - 499</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/admin/libro/500/<%= administrador[0].identificador%>" role="button">Consulta 500 - 599</a>
+            </td>
+          </tr>
+
+          <tr id="color1">
+            <td>
+              <a class="btn btn-primary" href="/admin/libro/600/<%= administrador[0].identificador%>" role="button">Consulta 600 - 699</a>
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/admin/libro/700/<%= administrador[0].identificador%>" role="button">Consulta 700 - 799</a>
+            </td>
+            <td>
+              <a class="btn btn-primary" href="/admin/libro/800/<%= administrador[0].identificador%>" role="button">Consulta 800 - 899</a>
+            </td>
+          </tr>
+          <tr id="color2">
+            <td colspan="3">
+              <a class="btn btn-primary" href="/admin/libro/900/<%= administrador[0].identificador%>" role="button">Consulta 900 - 999</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      <!--Tabla general-->
+      <div id="general" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="3">
+                  Área General
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="color1">
+              <td>
+                  <a class="btn btn-danger" href="/admin/libroGeneral/0/<%= administrador[0].identificador%>" role="button">General 0 - 99</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/admin/libroGeneral/100/<%= administrador[0].identificador%>" role="button">General 100 - 199</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/admin/libroGeneral/200/<%= administrador[0].identificador%>" role="button">General 200 - 299</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td>
+                  <a class="btn btn-danger" href="/admin/libroGeneral/300/<%= administrador[0].identificador%>" role="button">General 300 - 399</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/admin/libroGeneral/400/<%= administrador[0].identificador%>" role="button">General 400 - 499</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/admin/libroGeneral/500/<%= administrador[0].identificador%>" role="button">General 500 - 599</a>
+              </td>
+            </tr>
+
+            <tr id="color1">
+              <td>
+                <a class="btn btn-danger" href="/admin/libroGeneral/600/<%= administrador[0].identificador%>" role="button">General 600 - 699</a>
+              </td>
+              <td>
+                  <a class="btn btn-danger" href="/admin/libroGeneral/700/<%= administrador[0].identificador%>" role="button">General 700 - 799</a>
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/admin/libroGeneral/800/<%= administrador[0].identificador%>" role="button">General 800 - 899</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td colspan="3">
+                <a class="btn btn-danger" href="/admin/libroGeneral/900/<%= administrador[0].identificador%>" role="button">General 900 - 999</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!--Tabla infantil-->
+      <div id="infantil" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="3">
+                  Área Infantil
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="color1">
+              <td>
+                  <a class="btn btn-success" href="/admin/libroInfantil/0/<%= administrador[0].identificador%>" role="button">Infantil 0 - 99</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/admin/libroInfantil/100/<%= administrador[0].identificador%>" role="button">Infantil 100 - 199</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/admin/libroInfantil/200/<%= administrador[0].identificador%>" role="button">Infantil 200 - 299</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td>
+                  <a class="btn btn-success" href="/admin/libroInfantil/300/<%= administrador[0].identificador%>" role="button">Infantil 300 - 399</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/admin/libroInfantil/400/<%= administrador[0].identificador%>" role="button">Infantil 400 - 499</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/admin/libroInfantil/500/<%= administrador[0].identificador%>" role="button">Infantil 500 - 599</a>
+              </td>
+            </tr>
+
+            <tr id="color1">
+              <td>
+                <a class="btn btn-success" href="/admin/libroInfantil/600/<%= administrador[0].identificador%>" role="button">Infantil 600 - 699</a>
+              </td>
+              <td>
+                  <a class="btn btn-success" href="/admin/libroInfantil/700/<%= administrador[0].identificador%>" role="button">Infantil 700 - 799</a>
+              </td>
+              <td>
+                <a class="btn btn-success" href="/admin/libroInfantil/800/<%= administrador[0].identificador%>" role="button">Infantil 800 - 899</a>
+              </td>
+            </tr>
+
+            <tr id="color2">
+              <td colspan="3">
+                <a class="btn btn-success" href="/admin/libroInfantil/900/<%= administrador[0].identificador%>" role="button">Infantil 900 - 999</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+<br />
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>

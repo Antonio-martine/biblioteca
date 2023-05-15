@@ -1,0 +1,214 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/prestarLibro.css" type="text/css"/>
+
+<!--Código-->
+<%
+  var ordenInicio;
+  if(libro[0].orden >= 0 && libro[0].orden < 100 ){
+    ordenInicio = 0;
+  }
+  else if(libro[0].orden >= 100 && libro[0].orden < 200 ){
+    ordenInicio = 100;
+  }
+  else if(libro[0].orden >= 200 && libro[0].orden < 300 ){
+    ordenInicio = 200;
+  }
+  else if(libro[0].orden >= 300 && libro[0].orden < 400 ){
+    ordenInicio = 300;
+  }
+  else if(libro[0].orden >= 400 && libro[0].orden < 500 ){
+    ordenInicio = 400;
+  }
+  else if(libro[0].orden >= 500 && libro[0].orden < 600 ){
+    ordenInicio = 500;
+  }
+  else if(libro[0].orden >= 600 && libro[0].orden < 700 ){
+    ordenInicio = 600;
+  }
+  else if(libro[0].orden >= 700 && libro[0].orden < 800 ){
+    ordenInicio = 700;
+  }
+  else if(libro[0].orden >= 800 && libro[0].orden < 900 ){
+    ordenInicio = 800;
+  }
+  else if(libro[0].orden >= 900 && libro[0].orden < 1000 ){
+    ordenInicio = 900;
+  }
+ 
+%>
+
+<%
+var categoria;
+switch(libro[0].categoria){
+    case 'consulta':
+        categoria = "Consulta";
+        break;
+    case 'general':
+        categoria = "General";
+        break;
+    case 'infantil':
+        categoria = "Infantil";
+        break;
+    default: 
+        console.log("Error al insertar un valor a categoria");
+        break;
+}
+%>
+
+
+<!--Menú de opciones-->
+<div class="menu">
+    <a type="button" href="/admin/informacionLibro/<%= libro[0].id%>/<%= libro[0].categoria%>/<%= administrador[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+        </center>
+    </a>
+    <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+    <a type="button" href="/logout">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+      <br />
+      Salir
+    </center>
+    </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1><%= libro[0].titulo%> V.<%= libro[0].volumen%></h1>
+</header>
+<br />
+
+<div class="container">
+    <div class="row">
+        <!--Cards Prestamos-->
+        <div class="col-lg-6 col-md-12 col-sm-12" id="prestamo">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+                                Usuarios disponibles
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Nombre:</th>
+                            <th>Correo:</th>
+                            <th>Prestamo:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                    var i = 1;
+                    usuario.forEach((usuario)=>{
+                        if(i%2){    
+                    %>
+                        
+                        <tr id="row1">
+                            <td><%= usuario.nombre%> <%= usuario.apellido%></td>
+                            <td><%= usuario.correo%></td>
+                            <td style="text-align: center;">
+                                <a type="button" class="btn btn-danger" href="/admin/fechas/<%= usuario.id%>/<%= usuario.tipo%>/<%= administrador[0].identificador%>/<%=libro[0].id%>/<%=libro[0].categoria%>">
+                                    Prestar
+                                </a>
+                            </td>
+                        </tr>
+                        <%}else{%>
+                        <tr id="row2">
+                            <td><%= usuario.nombre%> <%= usuario.apellido%></td>
+                            <td><%= usuario.correo%></td>
+                            <td style="text-align: center;">
+                                <a type="button" class="btn btn-danger" href="/admin/fechas/<%= usuario.id%>/<%= usuario.tipo%>/<%= administrador[0].identificador%>/<%=libro[0].id%>/<%=libro[0].categoria%>">
+                                    Prestar
+                                </a>
+                            </td>
+                        </tr>
+                        <%
+                    }
+                    i = i+1;
+                    });
+                        %>
+                    </tbody>
+                </table>
+        </div>
+        <!--Cards Datos Libros-->
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            Estudiantes (Servicio Social) disponibles
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Nombre: </th>
+                        <th>Correo: </th>
+                        <th>Prestamo: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                    var i = 1;
+                    servicio.forEach((servicio)=>{
+                        if(i%2){    
+                    %>
+                        
+                        <tr id="row1">
+                            <td><%= servicio.nombre%> <%= servicio.apellido%></td>
+                            <td><%= servicio.correo%></td>
+                            <td style="text-align: center;">
+                                <a type="button" class="btn btn-danger" href="/admin/fechas/<%= servicio.id%>/<%= servicio.tipo%>/<%= administrador[0].identificador%>/<%=libro[0].id%>/<%=libro[0].categoria%>">
+                                    Prestar
+                                </a>
+                            </td>
+                        </tr>
+                        <%}else{%>
+                        <tr id="row2">
+                            <td><%= servicio.nombre%> <%= servicio.apellido%></td>
+                            <td><%= servicio.correo%></td>
+                            <td style="text-align: center;">
+                                <a type="button" class="btn btn-danger" href="/admin/fechas/<%= servicio.id%>/<%= servicio.tipo%>/<%= administrador[0].identificador%>/<%=libro[0].id%>/<%=libro[0].categoria%>">
+                                    Prestar
+                                </a>
+                            </td>
+                        </tr>
+                        <%
+                    }
+                    i = i+1;
+                    });
+                        %>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>

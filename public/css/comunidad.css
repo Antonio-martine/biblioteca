@@ -1,0 +1,249 @@
+  /*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/**Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Body*/
+body {
+  margin:0;
+  padding:0;
+  background-image: url('/static/img/backgrounds/Fondo2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+  /*Menu*/
+  .menu{
+    margin-top: 2%;
+    background-image: url('/static/img/backgrounds/Fondo1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    width: 200px;
+    margin-left: 2%;
+    float: left;
+    border-radius: 22px;
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#imgNavar{
+    width: 50px;
+    height: 50px;
+}
+
+/*Encabezado*/
+.encabezado{
+  height: 350px;
+  background-image: url("/static/img/comunidad.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header{
+  height: 65px;
+  background-color:#005796;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border-radius: 0px 0px 22px 22px;
+  vertical-align: center;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+
+}
+
+header h1:hover{
+  color: #ffbc08;
+}
+
+/*Busqueda*/
+.buscar{
+  width: 700px;
+  height: 90px;
+  background-color: #005796;
+  border-radius: 15px;
+  text-align: center;
+}
+
+input{
+  width: 500px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+.buscarButton{
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(247, 49, 49);
+}
+
+/*Tabla*/
+table{
+  border: 2px solid black;
+}
+
+th{
+  border: 2px solid black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+td{
+  border: 2px solid black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+td a{
+  height: 40px;
+}
+
+#color1{
+  background-color: white;
+}
+#color2{
+  background-color: gainsboro;
+}
+#color3{
+  background-color: #005796;
+}
+
+/*Footer*/
+footer{
+  height: 75px;
+  background-color: #005796;
+  text-align: center;
+}
+
+footer img{
+  width: 45px;
+  height: 45px;
+}
+
+/*Resolucion 320px*/
+@media screen and (min-width:320px) {
+  .encabezado{
+    height: 280px;
+  }
+  header{
+    height: 40px;
+  }
+  /*Busqueda*/
+  .buscar{
+    width: 305px;
+    height: 80px;
+  }
+
+  input{
+    width: 190px;
+    height: 35px;
+  }
+
+  .buscarButton{
+    font-size: 12px;
+    width: 85px;
+    height: 40px;
+  }
+
+  /*Tabla*/
+  #color1{
+    font-size: 10px;
+  }
+  #color2{
+    font-size: 10px;
+  }
+  #color3{
+    font-size: 12px;
+  }
+  td a{
+    width: 52px;
+    height: 40px;
+    margin: 2%;
+    text-align: center;
+  }
+
+  p{
+    font-size: 10px;
+  }
+}
+
+/*Resilicion 520px*/
+@media screen and (min-width:520px) {
+  header{
+    height: 50px;
+  }
+  /*Busqueda*/
+  #buscar{
+    width: 480px;
+    height: 80px;
+  }
+
+  #inputBusqueda{
+    width: 360px;
+    height: 35px;
+  }
+
+  #buscarButton{
+    font-size: 12px;
+    width: 100px;
+    height: 40px;
+  }
+    /*Tabla*/
+    #color1{
+      font-size: 14px;
+    }
+    #color2{
+      font-size: 14px;
+    }
+    #color3{
+      font-size: 16px;
+    }
+    td a{
+      width: 72px;
+      height: 50px;
+    }
+  
+    p{
+      font-size: 14px;
+    }
+}
+
+/*Resolicion 1120px*/
+@media screen and (min-width:1120px) {
+    /*Tabla*/
+    #color1{
+      font-size: 16px;
+    }
+    #color2{
+      font-size: 16px;
+    }
+    #color3{
+      font-size: 18px;
+    }
+    td a{
+      width: 92px;
+      height: 50px;
+      margin: 0%;
+    }
+  
+    p{
+      font-size: 16px;
+    }
+}

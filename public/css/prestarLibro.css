@@ -1,0 +1,274 @@
+/*Principal*/
+body{
+    margin:0;
+    padding:0;
+    background-image: url('/static/img/backgrounds/Fondo2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*Menú*/
+.menu{
+    margin-top: 2%;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    margin-left: 2%;
+    float: left;
+    border-radius: 22px;
+  }
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Encabezado*/
+.encabezado{
+    background-image: url("/static/img/Libros.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  header{
+    background-color:#005796;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 0px 0px 22px 22px;
+    vertical-align: center;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  
+  }
+  
+  header h1:hover{
+    color: #ffbc08;
+  }
+
+/*Fechas:*/
+.fechas{
+  background-color: #005796;
+  border: #005796 solid 1px;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 2%;
+}
+
+.form-control{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+
+  /*Tabla*/
+.table{
+    border: 1% solid white;
+}
+thead{
+    background-color: #005796;
+}
+thead th{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+thead th:hover{
+    color: black;
+    background-color: #ffbc08;
+}
+tbody td{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+#row1{
+    background-color: #96cbf2;
+}
+#row2{
+    background-color: white;
+}
+
+/*Footer*/
+.footer{
+  text-align: center;
+  background-color: #005796;
+  height: 65px;
+}
+.footer a{
+  text-decoration: none;
+} 
+
+
+  
+
+
+
+/*Resolucion 320px*/
+@media screen and (min-width:320px) {
+    /*Menu*/
+    #imgNavar{ /**/
+      width: 35px;
+      height: 35px; 
+    }
+    .menu{
+      width: 150px;
+    }
+    .menu a{
+      font-size: 12px;
+    }
+
+    /*Encabezado*/
+    .encabezado{
+        height: 180px;
+    }
+    header{
+        padding-top: 2%;
+        height: 40px;
+    }
+    header h1{
+        font-size: 16px;
+    }
+
+    /*Tabla*/
+    thead th{
+        font-size: 10px;
+    }
+    tbody td{
+        font-size: 10px;
+    }
+    .btn{
+        font-size: 10px;
+    }
+
+    /*Fechas:*/
+  .fechas{
+    font-size: 12px;
+    width: 200px;
+  }
+
+  .form-control{
+    height: 30px;
+    width: 120px;
+    font-size: 12px;
+  }
+
+  /*Footer*/
+  #imgFooter{
+    width: 40px;
+    height: 40px;
+  }
+  .footer a{
+      padding-top: 5%;
+  }
+}
+
+/*Resilicion 520px*/
+@media screen and (min-width:520px) {
+    /*Menu*/
+    #imgNavar{ /**/
+      width: 40px;
+      height: 40px; 
+    }
+    .menu a{
+      font-size: 14px;
+    }
+    .menu{
+      width: 200px;
+    }
+
+    /*Header*/
+    .encabezado{
+        height: 220px;
+    }
+    header{
+        padding-top: 2%;
+        height: 50px;
+    }
+    header h1{
+        font-size: 18px;
+    }
+
+    /*Tabla*/
+    thead th{
+        font-size: 14px;
+    }
+    tbody td{
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+        /*Fechas:*/
+  .fechas{
+    font-size: 14px;
+    width: 300px;
+  }
+
+  .form-control{
+    height: 35px;
+    width: 200px;
+    font-size: 14px;
+  }
+
+  /*Footer*/
+  .footer a{
+    padding-top: 2%;
+  }
+
+
+}
+
+/*Resolicion 720px*/
+@media screen and (min-width:720px) {
+    /*Header*/
+    .encabezado{
+      height: 300px;
+    }
+    header{
+      padding-top: 2%;
+      height: 55px;
+    }
+    header h1{
+      font-size: 20px;
+    }
+}
+
+/*Resolicion 920px*/
+@media screen and (min-width:920px) {
+  /*Footer*/
+  .footer a{
+      padding-top: 1%;
+  }
+}
+
+/*Resolicion 1120px*/
+@media screen and (min-width:1120px) {
+    /*Encabezado*/
+    header{
+      padding-top: 1%;
+    }
+    header h1{
+      font-size: 24px;
+    }
+
+
+  }
+
+/*Resolicion 1320px*/
+@media screen and (min-width:1320px) {
+    /*Encabezado*/
+    header{
+      padding-top: 1%;
+    }
+    header h1{
+      font-size: 24px;
+    }
+  }

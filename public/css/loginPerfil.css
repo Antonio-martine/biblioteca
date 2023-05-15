@@ -1,0 +1,429 @@
+  /*Poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/**Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Body*/
+body {
+  margin:0;
+  padding:0;
+  background-image: url('/static/img/backgrounds/Fondo2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*Navbar*/
+nav{
+  background-color: #005796;
+}
+
+.navbar a{
+  color: white;
+  font-family: 'Roboto', sans-serif;;
+}
+
+
+.btn-menu{
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#textOp{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+
+
+/*Subtitulo*/
+.subtitulo{
+  height: 50px; /**/
+  width: 550px; /**/
+  background-color: #005796;
+  text-align: center; 
+  border-radius: 22px; 
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.h1text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px; /**/
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*Botones*/
+.botones button{
+  width: 300px; /**/
+  height: 50px; /**/
+  margin: 5px; /**/
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /**/
+}
+
+.botones{
+  text-align: center;
+}
+
+/*Formularios*/
+.card{
+  width: 500px; /**/
+  background-color: #005796;
+  border-radius: 22px;
+  padding: 40px;
+  text-align: left;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.card input{
+  width: 100%; /**/
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: white;
+  text-align: center;
+
+}
+
+.card label{
+  color: #fff;
+  margin: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+
+}
+
+.card-header h3 {
+  margin: 0 0 30px; /**/
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 40px; /**/
+}
+.card-header img{
+  width: 40%; /**/
+  height: 40%; /**/
+}
+
+.card-header{
+  text-align: center;
+  background-color: #005796;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.card-footer{
+  background-color: #005796;
+}
+
+.card-body label{
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-footer button{
+  background-color: rgb(39, 214, 33);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /**/
+  color: white;
+  border: 2px solid rgb(39, 214, 33);
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.card-footer button:hover{
+  background-color: rgb(12, 201, 60);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: white;
+  border: 2px solid rgb(39, 214, 33);
+  border-radius: 10px;
+}
+
+.btn-password{
+  text-align: right;
+}
+
+.btn-password button{
+  background-color: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /**/
+  color: white;
+  border: transparent;
+  width: 200px; /**/
+  height: 35px; /**/
+}
+
+.btn-password button:hover{
+  color: #ffbc08;
+}
+
+#nuevo{
+  color: white; 
+  margin-left: 25%;
+  text-decoration: none;
+}
+
+#nuevo:hover{
+  color: red;
+}
+
+/*Footer*/
+.footer{
+  text-align: center;
+  background-color: #005796;
+  height: 65px;
+}
+.footer a{
+  text-decoration: none;
+}
+
+/*Resolución 320px*/
+@media screen and (min-width:320px) {
+  /*Navbar*/
+  .navbar a{
+    margin-left: 5%;
+    font-size: 14px;
+    }
+  .navbar a:hover{
+      font-weight: bold;
+      color: black;
+      background-color: #ffbc08;
+  }
+  .btn-menu{
+    width: 35px;
+    height: 35px;
+    margin-left: 85%;
+  }
+
+  /*Subtitulo*/
+  .subtitulo{
+    height: 35px; /**/
+    width: 260px; /**/
+  }
+  .h1text{
+    font-size: 20px; /**/
+  }
+
+    /*Botones*/
+  .botones button{
+    width: 130px; /**/
+    height: 35px; /**/
+    margin: 5px;
+    font-size: 11px;
+  }
+
+  /*Card*/
+  .card{
+    width: 260px;
+  }
+  .card-header h3{
+    font-size: 20px;
+  }
+  .card-header img{
+    width: 80px; /**/
+    height: 80px; /**/
+  }
+  .card-body input{
+    height: 30px;
+    font-size: 12px;
+  }
+  .card-body label{
+    font-size: 12px;
+  }
+  .btn-password button{
+    font-size: 12px;
+  }
+  .card-footer button{
+    font-size: 12px; /**/
+    width: 140px;
+    height: 35px;
+  }
+  #nuevo{
+    font-size: 12px; /**/
+  }
+
+  /*Footer*/
+  #imgFooter{
+    width: 40px;
+    height: 40px;
+  }
+  .footer a{
+      padding-top: 5%;
+  }
+
+}
+
+/*Resolución 520px*/
+@media screen and (min-width:520px) {
+  /*Navbar*/
+  .navbar a{
+    font-size: 16px;
+  }
+  .btn-menu{
+      margin-left: 89%;
+  }
+
+  /*Subtitulo*/
+  .subtitulo{
+    height: 40px; 
+    width: 400px; 
+  }
+  .h1text{
+    font-size: 22px; 
+  }
+
+    /*Botones*/
+  .botones button{
+    width: 210px; 
+    height: 40px; 
+    font-size: 12px;
+  }
+
+  /*Card*/
+  .card{
+    width: 400px;
+  }
+  .card-header h3{
+    font-size: 22px;
+  }
+  .card-header img{
+    width: 100px; /**/
+    height: 100px; /**/
+  }
+  .card-body input{
+    height: 35px;
+    font-size: 14px;
+  }
+  .card-body label{
+    font-size: 14px;
+  }
+  .btn-password button{
+    font-size: 14px;
+  }
+  .card-footer{
+    text-align: center;
+  }
+  .card-footer button{
+    font-size: 14px; /**/
+    width: 210px;
+    height: 40px;
+  }
+  #nuevo{
+    font-size: 14px; 
+  }
+
+  /*Footer*/
+  .footer a{
+    padding-top: 2%;
+  }
+
+}
+
+/*Resolución 720px*/
+@media screen and (min-width:720px){
+  /*navbar*/
+  .btn-menu{
+    margin-left: 93%;
+  }
+  
+}
+
+/*Resolución 920px*/
+@media screen and (min-width:920px) {
+  /*Subtitulo*/
+  .subtitulo{
+    height: 50px; /**/
+    width: 700px; /**/
+  }
+  .h1text{
+    font-size: 30px; /**/
+  }
+
+    /*Botones*/
+  .botones button{
+    width: 250px; /**/
+    height: 45px; /**/
+    font-size: 18px;
+  }
+
+  /*Card*/
+  .card{
+    width: 500px;
+  }
+  .card-header h3{
+    font-size: 30px;
+  }
+  .card-header img{
+    width: 200px; /**/
+    height: 200px; /**/
+  }
+
+  .card-body input{
+    height: 40px;
+  }
+  .card-body label{
+    font-size: 16px;
+  }
+  .btn-password button{
+    font-size: 16px;
+  }
+  .card-footer{
+    text-align: center;
+  }
+  .card-footer button{
+    font-size: 18px; /**/
+    width: 250px;
+    height: 45px;
+  }
+  #nuevo{
+    font-size: 16px; 
+  }
+
+  /*Footer*/
+  .footer a{
+    padding-top: 1%;
+  }
+}
+
+/*Resolucion 992px*/
+@media screen and (min-width:992px) {
+  /*Navbar*/
+  .btn-menu{
+      display: none;
+  }
+  .navbar a{
+      
+      font-size: 14px;
+  }
+  #navbarSupportedContent{
+      padding-left: 60%;
+  }
+  li a{
+      text-align: center;
+      width: 80px;
+  }
+}
+
+/*Resolucion 1120px*/
+@media screen and (min-width:1120px) {
+  /*Navbar*/
+  #navbarSupportedContent{
+      padding-left: 65%;
+  }
+}
+
+/*Resolucion 1320px*/
+@media screen and (min-width:1320px) {
+      /*Navbar*/
+      #navbarSupportedContent{
+          padding-left: 75%;
+      }
+}
+

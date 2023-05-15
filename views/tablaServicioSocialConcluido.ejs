@@ -1,0 +1,76 @@
+<%- include('templates/encabezado')%>
+
+<link rel="stylesheet" href="/static/css/tablaServicioSocial.css" type="text/css"/>
+
+<!--Menú de opciones-->
+<div class="menu">
+    <a type="button" href="/admin/tablaServicio/<%= administrador[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+      </center>
+      </a>
+      <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+        <br />
+        Home
+      </center>
+      </a>
+    <a type="button" href="/logout">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+      <br />
+      Salir
+    </center>
+    </a>
+  </div>
+
+  <div class="encabezado"></div>
+  <header id="principal">
+      <h1>Servicio Social Concluido</h1>
+  </header>
+  <br />
+
+  <div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th id="color3">#</th>
+                <th id="color3">Nombre</th>
+                <th id="color3">Apellido</th>
+                <th id="color3">Escuela</th>
+                <th id="color3">Ver perfil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% 
+            var i = 1;
+            servicio.forEach((servicio)=>{
+
+            %>
+        <tr>
+            <td id="color1"><%= i %></td>
+            <td id="color2"><%= servicio.nombre%></td>
+            <td id="color1"><%= servicio.apellido%></td>
+            <td id="color2"><%= servicio.escuela%></td>
+            <td id="color1">
+              <a id="ver" href="/admin/alumnoConcluido/<%= administrador[0].identificador%>/<%= servicio.correo%>" type="button">
+                <p id="mas">Ver más</p>
+              </a>
+            </td>
+        </tr>
+            <%
+            i = i+1;
+            });
+            %>
+        </tbody>
+    </table>
+  </div>
+  <br />
+
+
+
+
+<%- include('templates/pie')%>

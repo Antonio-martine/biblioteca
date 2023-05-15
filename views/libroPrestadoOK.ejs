@@ -1,0 +1,17 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/404Error.css" type="text/css"/>
+<br />
+
+<div class="container">
+    <div class="row">
+        <div id="imagen">
+            <img src="/static/img/icons/comprobado.png" >
+            <br />
+            <h2>¡Acción Realizada!</h2>
+            <p id="mensaje">Recuerda mencionarle al usuario que no olvide entregar su libro en tiempo y forma, así como un buen deseo para que disfrute de su contenido.</p>
+            <br />
+            <a href="/admin/LibrosAdmin/<%=administrador[0].identificador%>" type="button" class="button"><p>Continuar</p></a>
+        </div>
+    </div>
+</div>
+<br />

@@ -1,0 +1,75 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/comunidad.css" type="text/css"/>
+
+<!--Menu-->
+<div class="menu">
+  <a type="button" href="/admin/comunidad/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+    <br />
+    Regresar
+  </center>
+  </a>
+  <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Resultados de busqueda</h1>
+</header>
+<center>
+<div class="container">
+    <br />
+    <table class="table">
+      <thead>
+          <tr>
+              <th id="color3">#</th>
+              <th id="color3">Nombre</th>
+              <th id="color3">correo</th>
+              <th id="color3">Configuraciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% 
+          var i = 1;
+          usuario.forEach((usuario)=>{
+
+          %>
+      <tr>
+          <td id="color1"><%= i %></td>
+          <td id="color2"><%= usuario.nombre%> <%= usuario.apellido%></td>
+          <td id="color1"><%= usuario.correo%></td>
+          <td id="color1">
+            <a type="button" class="btn btn-primary" href="/admin/informacionUsuario/<%= administrador[0].identificador%>/<%= usuario.correo%>">
+              <p>Ver más</p>
+            </a>
+            <a type="button" class="btn btn-success" href="/admin/modificarUsuario/<%= administrador[0].identificador%>/<%= usuario.correo%>">
+              <p>Modificar</p>
+            </a>
+            <a type="button" class="btn btn-danger" href="/admin/borrarUser/<%= administrador[0].identificador%>/<%= usuario.correo%>">
+              <p>Borrar</p>
+            </a>
+          </td>
+      </tr>
+          <%
+          i = i+1;
+          });
+          %>
+      </tbody>
+  </table>
+<br />
+</div>
+<%- include('templates/pie')%>

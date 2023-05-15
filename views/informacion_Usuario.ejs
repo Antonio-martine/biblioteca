@@ -1,0 +1,253 @@
+<%- include('templates/encabezado')%>
+
+<link rel="stylesheet" href="/static/css/informacion_Estudiante.css" type="text/css"/>
+<!--Menú de opciones-->
+<div class="menu">
+    <a type="button" href="/admin/comunidad/<%= administrador[0].identificador%>">
+        <center>
+        <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+        <br />
+        Regresar
+      </center>
+    </a>
+    <a type="button" href="/admin/HomeAdmin/<%= administrador[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+    <a type="button" href="/logout">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+      <br />
+      Salir
+    </center>
+    </a>
+  </div>
+
+  <div class="encabezado"></div>
+  <header id="principal">
+      <h1>Información Usuario</h1>
+  </header>
+  <br />
+
+<div class="container">
+  <div class="row">
+      <!--Card1: Horas-->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Información</h2>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="4" style="text-align: center;">Libros en prestamo</th>
+              </tr>
+                <tr id="row">
+                    <th>#</th>
+                    <th>titulo</th>
+                    <th>Autor</th>
+                    <th>Más</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr id="row">
+                <td>99A</td>
+                <td>sadfhgsdhgfhgahsd fwyegwgegr</td>
+                <td>ashdfahsdf ywg ewg </td>
+                <td>
+                  <a type="button" class="btn btn-danger" href="">Quitar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="4" style="text-align: center;">Historial de libros</th>
+              </tr>
+                <tr id="row">
+                    <th>#</th>
+                    <th>titulo</th>
+                    <th>Autor</th>
+                    <th>Más</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr id="row">
+                <td>99A</td>
+                <td>sadfhgsdhgfhgahsd fwyegwgegr</td>
+                <td>ashdfahsdf ywg ewg </td>
+                <td>
+                  <a type="button" class="btn btn-danger" href="">Quitar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="4" style="text-align: center;">Donaciones</th>
+              </tr>
+                <tr id="row">
+                    <th>#</th>
+                    <th>Categoria</th>
+                    <th>Cantidad</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+              <% 
+              var i = 1;
+              donacion.forEach((donacion)=>{
+              %>
+              <tr id="row">
+                <td><%= i %></td>
+                <td><%= donacion.categoria %></td>
+                <td><%= donacion.cantidad %></td>
+                <td><%= donacion.descripcion %></td>
+              </tr>
+              <%
+              i = i+1;
+                });
+              %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--Informacion del usuario-->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Usuario <%= usuario[0].nombre%></h2>
+        </div>
+        <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th id="sub" colspan="2">Información personal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="row">
+                  <td>
+                    <b>Nombre(s):</b> 
+                    <br />
+                    <%= usuario[0].nombre%>
+                  </td>
+                  <td>
+                    <b>Apellido(s):</b>
+                    <br />
+                    <%= usuario[0].apellido%>
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <b>Correo:</b>
+                    <br />
+                    <%= usuario[0].correo%>
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <b>Contraseña:</b>
+                    <br />
+                    <%= usuario[0].password%>
+                  </td>
+                  </tr>
+                  <tr id="row">
+                  <td colspan="2">
+                    <b>Tipo de usuario:</b>
+                    <br />
+                    Usuario   
+                  </td>
+                </tr>
+                <tr id="row">
+                  <td colspan="2">
+                    <label><b>Nota: </b>Por tu seguridad, se mostrará su contraseña encriptados</label></td>
+                </tr>
+                  <th colspan="2">Acciones:</th>
+                </tr>
+                <tr>
+                  <td colspan="2" style="text-align: center;">
+                    <div class="menu-opciones">
+                      <a type="button" href="/admin/modificarAlumno/<%= administrador[0].identificador%>/<%= usuario[0].correo%>">
+                        <center>
+                        <img id="imgOpcion" src="/static/img/navbar/prestamos.png" alt="404Imagen Link">
+                        <br />
+                        Prestar libro
+                      </center>
+                      </a>
+                      <a type="button" href="/admin/borrarAlumno/<%= administrador[0].identificador%>/<%= usuario[0].correo%>">
+                        <center>
+                        <img id="imgOpcion" src="/static/img/navbar/chat.png" alt="404Imagen Link">
+                        <br />
+                        Chat
+                      </center>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th id="sub" colspan="2">Donaciones</th>
+                  </tr>
+                </thead>
+                <form action="/admin/donacion/<%= administrador[0].identificador%>/<%= usuario[0].correo%>" method="post">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label>Categoría</label>
+                        <select name="categoria" class="form-control">
+                          <option>Seleccione una categoría</option>
+                          <option value="libro">Libros o revistas</option>
+                          <option value="audio-sonido-video">Audio, sondio o video</option>
+                          <option value="limpieza">Limpieza</option>
+                          <option value="computo">Computo</option>
+                          <option value="otros">Otros</option>
+                        </select>
+                      </td>
+                      <td>
+                        <label>Cantidad</label>
+                        <input type="number" class="form-control" name="cantidad">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <label>Descripción:</label>
+                        <textarea name="descripcion" class="form-control" rows="8"></textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th colspan="2">
+                        <center>
+                        <button type="submit" class="btn btn-success col-6">Donar</button>
+                        </center>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </form>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<br />
+
+
+<%- include('templates/pie')%>

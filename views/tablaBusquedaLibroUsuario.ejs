@@ -1,0 +1,148 @@
+<%- include('templates/encabezado')%>
+<link rel="stylesheet" href="/static/css/tablaLibros.css" type="text/css"/>
+
+
+<!--Menú de opciones-->
+<div class="menu">
+  <%if(usuario[0].tipo == 'usuario'){%>
+  <a type="button" href="/libros/<%= usuario[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+    <br />
+    Regresar
+    </center>
+  </a>
+  <a type="button" href="/HomeUsuario/<%= usuario[0].identificador%>">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+    <br />
+    Home
+  </center>
+  </a>
+  <%}
+  else if(usuario[0].tipo == 'servicioSocial'){%>
+    <a type="button" href="/servicio/libros/<%= usuario[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/regreso.png" alt="404Imagen Link">
+      <br />
+      Regresar
+      </center>
+    </a>
+    <a type="button" href="/servicio/homeServicio/<%= usuario[0].identificador%>">
+      <center>
+      <img id="imgNavar" src="/static/img/navbar/home.png" alt="404Imagen Link">
+      <br />
+      Home
+    </center>
+    </a>
+  <%}%>
+  <a type="button" href="/logout">
+    <center>
+    <img id="imgNavar" src="/static/img/navbar/salir2.png" alt="404Imagen Link">
+    <br />
+    Salir
+  </center>
+  </a>
+</div>
+
+<div class="encabezado"></div>
+<header id="principal">
+    <h1>Búsqueda</h1>
+</header>
+<br />
+
+<div class="container">
+  <div class="row">
+
+    <table class="table">
+      <thead>
+          <tr>
+            <th colspan="7">Resultados</th>
+          </tr>
+          <tr>
+              <th>id</th>
+              <th>#</th>
+              <th>Titulo</th>
+              <th>Autor</th>
+              <th>Editorial</th>
+              <th>Volumen</th>
+              <th>Ver más</th>
+          </tr>
+      </thead>
+      <tbody> 
+        <%
+        var i=1;
+        libro.forEach((libro)=>{
+          
+          if(i%2){
+                %>
+                <tr id="row1">
+                  <td><b><%= i %></b></td>
+                  <td><%= libro.orden %></td>
+                  <td><%= libro.titulo%></td>
+                  <td><%= libro.autor%></td>
+                  <td><%= libro.editorial%></td>
+                  <td>V.<%= libro.volumen%></td>  
+                  <td>
+                    <a type="button" id="verMas" class="btn btn-primary" href="/informacionLibro/<%= libro.id%>/<%= libro.categoria%>/<%= usuario[0].identificador%>">
+                      <p>Ver más</p>
+                    </a>
+                  </tr>
+                  <%
+                }else{%>
+                  <tr id="row2">
+                    <td><b><%= i %></b></td>
+                    <td><%= libro.orden %></td>
+                    <td><%= libro.titulo%></td>
+                    <td><%= libro.autor%></td>
+                    <td><%= libro.editorial%></td>
+                    <td>V.<%= libro.volumen%></td>  
+                    <td>
+                      <a type="button" id="verMas" class="btn btn-primary" href="/informacionLibro/<%= libro.id%>/<%= libro.categoria%>/<%= usuario[0].identificador%>">
+                        <p>Ver más</p>
+                      </a>
+                    </tr>
+                    <%
+                }
+            i=i+1;
+           });
+           var complemento = i - 1;
+           if(complemento == 0){
+            %>
+            <tr id="row1" style="text-align: center;">
+              <td colspan="7">
+                No se encontró el dato, verifiqué si su texto esta bien escrito...
+              </td>
+            </tr>  
+            <%          
+           }
+           %>
+      </tbody>
+  </table>
+  </div>
+</div>
+
+  <div class="footer">
+    <a type="button" href="https://www.facebook.com/profile.php?id=100063793185637">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/facebookColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/InstagramColor.png">
+        </center>
+    </a>
+    <a type="button" href="https://api.whatsapp.com/send?phone=4271048896&text=Hola, necesito más información!">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/WhatsappColor.png">
+        </center>
+    </a>
+    <a type="button" href="">
+        <center>
+            <img id="imgFooter" src="/static/img/icons/gmail.png">
+        </center>
+    </a>
+  </div>
+</body>
+</html>
